@@ -13,6 +13,8 @@
 	    <input type="button" value="S" style="text-decoration:underline;" onclick="commande('underline');" /> 
 	    <input type="button" value="abc" style="text-decoration:line-through;" onclick="commande('strikeThrough');" /> 
 	    <button type="button" onclick="commande('createLink');"><i class="fa fa-link"></i></button>		
+	    <button type="button" onclick="commande('unlink');"><i class="fa fa-unlink"></i></button>		
+	    <button type="button" onclick="commande('insertImage');"><i class="fa fa-image"></i></button>		
 	    <div id="editeur" contentEditable ></div> 
 		<div>
 	</body>
