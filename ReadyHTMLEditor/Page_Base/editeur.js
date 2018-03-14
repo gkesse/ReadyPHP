@@ -22,8 +22,15 @@ function commande(nom, argument){
 	}
 }
 
-function resultat(){
-	var m_resultat = document.getElementById("resultat");
-	var m_editeur = document.getElementById("editeur");
-	m_resultat.value = m_editeur.innerHTML;
+function codeHtml(){
+	var m_codeHtmlId = document.getElementById("codeHtmlId");
+	var m_codeEditorId = document.getElementById("codeEditorId");
+	m_codeHtmlId.value = m_codeEditorId.innerHTML;
+}
+
+
+function codeView(){
+	var m_codeViewId = document.getElementById("codeViewId");
+	var m_codeEditorId = document.getElementById("codeEditorId");
+	m_codeViewId.innerHTML = m_codeEditorId.innerHTML;
 }

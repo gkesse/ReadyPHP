@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>ReadyHTMLEditor</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link rel="stylesheet" href="style.css" />
 		<script src="editeur.js"></script>
@@ -12,7 +13,7 @@
 		<div class="pgBg">
 			<div class="mrga pgBd">
 				<!-- ============================================ -->
-				<div class="pgCt10">
+				<div class="pgCt10 txal">
 					<div class="">
 						<!-- ============================================ -->
 						<div class="bgra pddc fts0">
@@ -34,12 +35,17 @@
 								<option value="h6">Titre 6</option>
 							</select>
 						</div>
+						<div class="brda mnha pgCt10" id="codeEditorId" contentEditable ></div> 
 						<!-- ============================================ -->
-						<div class="brda mnha pgCt10" id="editeur" contentEditable ></div> 
+						<div class="pddc">
+							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
+						</div>
+						<div class="bgra mnha pgCt10" id="codeViewId"></div>
 						<!-- ============================================ -->
-						<button class="" type="button" onclick="resultat();">Obtenir le HTML</button>
-						<!-- ============================================ -->
-						<textarea class="bgra mnha pgCt10" id="resultat"></textarea>
+						<div class="pddc">
+							<button class="evta" type="button" onclick="codeHtml();">Obtenir le HTML</button>
+						</div>
+						<textarea class="bgra mnha pgCt10" id="codeHtmlId"></textarea>
 						<!-- ============================================ -->
 					</div>
 				</div>
