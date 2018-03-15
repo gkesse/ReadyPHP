@@ -56,7 +56,7 @@
 								Interface Edition
 							</a>
 						</h1>
-						<div class="bgra pgCt10 ovfa">
+						<div class="pgCt10 ovfa">
 							<div class="hghd" id="codeEditorId" contentEditable></div> 
 						</div>
 					</div>
