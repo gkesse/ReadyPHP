@@ -770,6 +770,10 @@ h1 {
     padding: 10px 5px;
 }
 
+.pddi {
+    padding: 5px 0;
+}
+
 /* padding left */
 .pdla {
     padding-left: 5px;
