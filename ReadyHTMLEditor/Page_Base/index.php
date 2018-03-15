@@ -3,7 +3,12 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>ReadyHTMLEditor</title>
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton"/>
+                <!-- ============================================ -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Aclonica"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Akronim"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Allan"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Archivo Narrow"/>
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<link rel="stylesheet" href="style.css" />
 		<script src="editeur.js"></script>
@@ -11,7 +16,7 @@
 	<body>
 		<!-- ============================================ -->
 		<div class="pgBg">
-			<div class="mrga pgBd">
+			<div class="mrga pgBd ftfe ftsb">
 				<!-- ============================================ -->
 				<div class="pgCt10 txal">
 					<div class="">
@@ -41,12 +46,12 @@
 						<div class="pddi">
 							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
 						</div>
-						<div class="bgra mnha pgCt10" id="codeViewId"></div>
+						<div class="mnha pgCt10" id="codeViewId"></div>
 						<!-- ============================================ -->
-						<div class="pddi">
+						<!--div class="pddi">
 							<button class="evta" type="button" onclick="codeHtml();">Obtenir le HTML</button>
 						</div>
-						<textarea class="bgra mnha pgCt10" id="codeHtmlId"></textarea>
+						<textarea class="bgra mnha pgCt10" id="codeHtmlId"></textarea-->
 						<!-- ============================================ -->
 					</div>
 				</div>

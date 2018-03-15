@@ -103,8 +103,17 @@ b {
 /* ============================================== */
 
 h1 {
-	background: black;
+    background: rgba(255,255,255,0.2);
 	font-family: Anton;
+	padding: 0 10px;
+	color: #89a830;
+}
+
+h2 {
+    background: rgba(255,255,255,0.2);
+	font-family: "Archivo Narrow";
+	padding: 3px 10px;
+	color: #f67b20;
 }
 
 /* ============================================== */
@@ -135,7 +144,7 @@ h1 {
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     font-size: 25px;
-    font-family: AKronim;
+    font-family: Akronim;
     color: cyan;
     padding: 0 20px 0 10px;
     display: inline-block;
@@ -172,7 +181,7 @@ h1 {
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     font-size: 25px;
-    font-family: AKronim;
+    font-family: Akronim;
     color: white;
     padding: 0 10px 0 10px;
     display: none;
@@ -565,6 +574,10 @@ h1 {
 
 .ftfd {
     font-family: Allan;
+}
+
+.ftfe {
+    font-family: Archivo Narrow;
 }
 
 /* height */

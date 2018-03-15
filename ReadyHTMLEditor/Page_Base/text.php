@@ -1,1 +1,1 @@
-<h1>Compilation d’un projet C   avec MinGW</h1><br>Compiler un projet C   avec un fichier source<br><br>Objectif :<br>Compiler un projet C   avec un fichier source.<br><br>Implémentation :<br>Afficher un message dans la console (Hello World).<br><br>
+<h1>Compilation d’un projet C   avec MinGW</h1><br><h2>Compiler un projet C   avec un fichier source</h2><br><b>Objectif :</b><br>Compiler un projet C   avec un fichier source.<br><br><b>Implémentation :</b><br>Afficher un message dans la console (Hello World).<br><br>
