@@ -56,7 +56,7 @@
 								Interface Edition
 							</a>
 						</h1>
-						<div class="pgCt10 ovfa">
+						<div class="bgra pgCt10 ovfa">
 							<div class="hghd" id="codeEditorId" contentEditable></div> 
 						</div>
 					</div>
@@ -69,11 +69,11 @@
 								Interface Vue
 							</a>
 						</h1>
-						<div class="bgra bdbb">
+						<div class="bdbb">
 							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
 						</div>
-						<div class="bgra ovfa">
-							<div class="hghd pgCt10" id="codeViewId"></div>
+						<div class="pgCt10 ovfa">
+							<div class="hghd" id="codeViewId"></div>
 						</div>
 					</div>
 				</div>
@@ -85,10 +85,10 @@
 								Interface HTML
 							</a>
 						</h1>
-						<div class="bgra bdbb">
+						<div class="bdbb">
 							<button class="evta" type="button" onclick="codeHtml();">Obtenir le HTML</button>
 						</div>
-						<div class="bgra ovfa">
+						<div class="ovfa">
 							<textarea class="hghd pgCt10" rows="20" id="codeHtmlId"></textarea>
 						</div>
 					</div>
