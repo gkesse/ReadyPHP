@@ -345,6 +345,10 @@ h2 {
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
+.bdbb {
+    border-bottom: 5px solid #051039;
+}
+
 /* border-right */
 .bdra {
     border-right: 1px solid rgba(255,255,255,0.3);
@@ -842,7 +846,7 @@ h2 {
 }
 
 .pdtb {
-    padding-top: 50px;
+    padding-top: 35px;
 }
 
 /* padding bottom */
