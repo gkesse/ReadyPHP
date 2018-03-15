@@ -1,3 +1,4 @@
+//===============================================
 function commande(nom, argument){
 	switch(nom){
 	case "createLink":
@@ -5,11 +6,11 @@ function commande(nom, argument){
 		argument = prompt("Quelle est l'adresse ?");
 		break;
 	}
-	
+
 	if (typeof argument === 'undefined') {
 		argument = '';
 	}
-	
+
 	switch(nom){
 	case "createLinkO":
 		var selected = document.getSelection();
@@ -20,28 +21,29 @@ function commande(nom, argument){
 		break;
 	}
 }
-
+//===============================================
 function codeHtml(){
 	var m_codeHtmlId = document.getElementById("codeHtmlId");
 	var m_codeEditorId = document.getElementById("codeEditorId");
 	m_codeHtmlId.value = m_codeEditorId.innerHTML;
 }
-
-
+//===============================================
 function codeView(){
 	var m_codeViewId = document.getElementById("codeViewId");
 	var m_codeEditorId = document.getElementById("codeEditorId");
 	m_codeViewId.innerHTML = m_codeEditorId.innerHTML;
 }
-
+//===============================================
 function saveFile() {
+	//var m_res = confirm("Êtes vous sûr de vouloir enregistrer les modifications ?");
+	//if(m_res == false) return;
 	var m_codeEditorId = document.getElementById("codeEditorId");
-	var m_data = m_codeEditorId.innerHTML;
+	var m_data = encodeURIComponent(m_codeEditorId.innerHTML);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
 	xmlhttp.send();
 }
-
+//===============================================
 function readFile() {
 	var m_codeEditorId = document.getElementById("codeEditorId");
 	var xmlhttp = new XMLHttpRequest();
@@ -53,5 +55,6 @@ function readFile() {
 	xmlhttp.open("GET", "ajax.php?r=READ_FILE&f=text.php", true);
 	xmlhttp.send();
 }
-
+//===============================================
 readFile();
+//===============================================

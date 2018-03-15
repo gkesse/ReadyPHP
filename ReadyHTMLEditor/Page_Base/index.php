@@ -27,7 +27,7 @@
 				<div class="pgCt10">
 					<div class="brda">
 						<h1 class="bgra pgCt10" id="Sommaire">
-							<a class="clrb" href="#">
+							<a class="clri" href="#">
 								Sommaire
 							</a>
 						</h1>
@@ -52,11 +52,11 @@
 				<div class="pgCt10">
 					<div class="brda">
 						<h1 class="bgra pgCt10 bdbb" id="Interface_Edition">
-							<a class="clrb" href="#Sommaire">
+							<a class="clri" href="#Sommaire">
 								Interface Edition
 							</a>
 						</h1>
-						<div class="pgCt10 ovfa">
+						<div class="pgCt10 ovfa txal">
 							<div class="hghd" id="codeEditorId" contentEditable></div> 
 						</div>
 					</div>
@@ -65,14 +65,14 @@
 				<div class="pgCt10">
 					<div class="brda">
 						<h1 class="bgra pgCt10 bdbb" id="Interface_Vue">
-							<a class="clrb" href="#Sommaire">
+							<a class="clri" href="#Sommaire">
 								Interface Vue
 							</a>
 						</h1>
 						<div class="bdbb">
 							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
 						</div>
-						<div class="pgCt10 ovfa">
+						<div class="pgCt10 ovfa txal">
 							<div class="hghd" id="codeViewId"></div>
 						</div>
 					</div>
