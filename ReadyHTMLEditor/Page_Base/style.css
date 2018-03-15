@@ -327,6 +327,10 @@ h2 {
     background: #333333;
 }
 
+.bgrh {
+    background: #374061;
+}
+
 /* border */
 .brda {
     border: 1px solid rgba(255,255,255,0.2);
@@ -394,6 +398,10 @@ h2 {
 
 .clrj {
     color: gray;
+}
+
+.clrk {
+    color: #374061;
 }
 
 /* cursor pointer */
@@ -602,6 +610,10 @@ h2 {
 
 .hghc {
     height: 100px;
+}
+
+.hghd {
+    height: 500px;
 }
 
 /* hover */
@@ -829,6 +841,10 @@ h2 {
     padding-top: 10px;
 }
 
+.pdtb {
+    padding-top: 50px;
+}
+
 /* padding bottom */
 .pdba {
     padding-bottom: 10px;
@@ -858,6 +874,14 @@ h2 {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+/* position fixed */
+.psfa {
+    position: fixed;
+    top: 0;
+    left: 0;
+	right: 0;
 }
 
 /* succes */
@@ -901,6 +925,10 @@ h2 {
 /* text-decoration */
 .txdu {
     text-decoration: underline;
+}
+
+.txdl {
+	text-decoration: line-through;
 }
 
 /* width */
