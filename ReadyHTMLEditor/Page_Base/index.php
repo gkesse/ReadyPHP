@@ -24,9 +24,9 @@
 		<div class="pgBg">
 			<div class="mrga pgBd ftfe ftsg pdtb">
 				<!-- ============================================ -->
-				<div class="pgCt10" id="Sommaire">
+				<div class="pgCt10">
 					<div class="brda">
-						<h1 class="bgra pgCt10">
+						<h1 class="bgra pgCt10" id="Sommaire">
 							<a class="clrb" href="#">
 								Sommaire
 							</a>
@@ -49,28 +49,50 @@
 					</div>
 				</div>
 				<!-- ============================================ -->
-				<div class="pgCt10" id="Interface_Edition">
+				<div class="pgCt10">
 					<div class="brda">
-						<h1 class="bgra pgCt10">
+						<h1 class="bgra pgCt10 bdbb" id="Interface_Edition">
 							<a class="clrb" href="#Sommaire">
 								Interface Edition
 							</a>
 						</h1>
-						<div class="pgCt10 hghd ovfa">
-							<div id="codeEditorId" contentEditable></div> 
+						<div class="pgCt10 ovfa">
+							<div class="hghd" id="codeEditorId" contentEditable></div> 
 						</div>
 					</div>
 				</div>
 				<!-- ============================================ -->
-				<div class="pddi">
-					<button class="evta" type="button" onclick="codeView();">Aperçu</button>
+				<div class="pgCt10">
+					<div class="brda">
+						<h1 class="bgra pgCt10 bdbb" id="Interface_Vue">
+							<a class="clrb" href="#Sommaire">
+								Interface Vue
+							</a>
+						</h1>
+						<div class="bgra bdbb">
+							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
+						</div>
+						<div class="bgra ovfa">
+							<div class="hghd pgCt10" id="codeViewId"></div>
+						</div>
+					</div>
 				</div>
-				<div class="mnha pgCt10" id="codeViewId"></div>
 				<!-- ============================================ -->
-				<!--div class="pddi">
+				<div class="pgCt10">
+					<div class="brda">
+						<h1 class="bgra pgCt10 bdbb" id="Interface_HTML">
+							<a class="clrb" href="#Sommaire">
+								Interface HTML
+							</a>
+						</h1>
+						<div class="bgra bdbb">
 							<button class="evta" type="button" onclick="codeHtml();">Obtenir le HTML</button>
 						</div>
-						<textarea class="bgra mnha pgCt10" id="codeHtmlId"></textarea-->
+						<div class="bgra ovfa">
+							<textarea class="hghd pgCt10" rows="20" id="codeHtmlId"></textarea>
+						</div>
+					</div>
+				</div>
 				<!-- ============================================ -->
 			</div>
 			<!-- ============================================ -->
