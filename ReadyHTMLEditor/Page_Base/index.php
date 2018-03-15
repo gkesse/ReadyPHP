@@ -16,7 +16,7 @@
 	<body>
 		<!-- ============================================ -->
 		<div class="pgBg">
-			<div class="mrga pgBd ftfe ftsb">
+			<div class="mrga pgBd ftfe ftsg">
 				<!-- ============================================ -->
 				<div class="pgCt10 txal">
 					<div class="">
