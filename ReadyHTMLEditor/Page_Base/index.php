@@ -22,14 +22,23 @@
 					<div class="">
 						<!-- ============================================ -->
 						<div class="bgra pddc fts0">
-							<button class="evta pddc ftsb ftwb" type="button" onclick="commande('bold');">G</button>
-							<button class="evta pddc ftsb ftti" type="button" onclick="commande('italic');">I</button>
-							<button class="evta pddc ftsb txdu" type="button" onclick="commande('underline');">S</button> 
-							<button class="evta pddc ftsb" type="button" onclick="commande('strikeThrough');">abc</button>
-							<button class="evta pddc ftsb" type="button" onclick="commande('createLink');"><i class="fa fa-link"></i></button>		
-							<button class="evta pddc ftsb" type="button" onclick="commande('unlink');"><i class="fa fa-unlink"></i></button>		
-							<button class="evta pddc ftsb" type="button" onclick="commande('insertImage');"><i class="fa fa-image"></i></button>		
-							<button class="evta pddc ftsb" type="button" onclick="saveFile();"><i class="fa fa-save"></i></button>		
+							<button class="evta pddc ftsb ftwb" type="button" title="Texte en Gras" onclick="commande('bold');">G</button>
+							<button class="evta pddc ftsb ftti" type="button" title="Texte en Italic" onclick="commande('italic');">I</button>
+							<button class="evta pddc ftsb txdu" type="button" title="Souligner Texte" onclick="commande('underline');">S</button> 
+							<button class="evta pddc ftsb" type="button" title="Barrer Texte" onclick="commande('strikeThrough');">abc</button>
+							<button class="evta pddc ftsb" type="button" title="Insérer Lien" onclick="commande('createLink');"><i class="fa fa-link"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Supprimer Lien" onclick="commande('unlink');"><i class="fa fa-unlink"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Insérer Image" onclick="commande('insertImage');"><i class="fa fa-image"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Enregistrer Fichier" onclick="saveFile();"><i class="fa fa-save"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Texte à Gauche" onclick="commande('justifyleft');"><i class="fa fa-align-left"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Text au Centre" onclick="commande('justifycenter');"><i class="fa fa-align-center"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Texte à Droite" onclick="commande('justifyright');"><i class="fa fa-align-right"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Texte Justifié" onclick="commande('justifyfull');"><i class="fa fa-align-justify"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Puces" onclick="commande('insertunorderedlist');"><i class="fa fa-image"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Puces Ordonnées" onclick="commande('insertorderedlist');"><i class="fa fa-image"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
+							<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
 							<!-- ============================================ -->
 							<select class="brda mnwa mrgd" onchange="commande('heading', this.value); this.selectedIndex = 0;">
 								<option value="">Titre</option>
