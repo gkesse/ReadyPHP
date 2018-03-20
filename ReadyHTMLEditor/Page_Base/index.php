@@ -1,7 +1,7 @@
 <?php
     require "GAutoloadRegister.php";
     
-    $m_data = GJson::Instance()->getData("PageEditor.json");
+    $m_data = GJson::Instance()->getData("/Page_Base/PageEditor.json");
 ?>
 <!-- ============================================ -->
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="style.css" />
 		<script src="editeur.js"></script>
 	</head>
-	<body>
+	<body onkeypress="saveFileKey(event);">
 		<!-- ============================================ -->
 		<div class="pgBg">
 			<div class="mrga pgBd ftfe ftsg pdtb">
@@ -57,7 +57,9 @@
 							</a>
 						</h1>
 						<div class="pgCt10 ovfa txal">
-							<div class="hghd" id="codeEditorId" contentEditable></div> 
+							<div class="hghd" id="codeEditorId" 
+							onpaste="deleteStyle(event);" 
+							contentEditable></div> 
 						</div>
 					</div>
 				</div>

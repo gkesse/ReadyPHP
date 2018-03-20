@@ -44,6 +44,14 @@ function saveFile() {
 	xmlhttp.send();
 }
 //===============================================
+function saveFileKey(e) {
+	if (e.code == 'KeyS' && (e.ctrlKey || e.metaKey)) {
+		e.stopPropagation();
+		e.preventDefault();
+		saveFile();
+	}
+};
+//===============================================
 function readFile() {
 	var m_codeEditorId = document.getElementById("codeEditorId");
 	var xmlhttp = new XMLHttpRequest();
@@ -54,6 +62,17 @@ function readFile() {
 	};
 	xmlhttp.open("GET", "ajax.php?r=READ_FILE&f=text.php", true);
 	xmlhttp.send();
+}
+//===============================================
+function deleteStyle(e) {
+	var m_res = confirm("Voulez-vous supprimer le style associé au texte ?");
+	if(m_res == false) return;
+	e.stopPropagation();
+	e.preventDefault();
+	var m_clipboardData = e.clipboardData || window.clipboardData;
+	var m_data = m_clipboardData.getData("text/plain");
+	var m_codeEditorId = document.getElementById("codeEditorId");
+	m_codeEditorId.innerHTML += m_data;
 }
 //===============================================
 readFile();
