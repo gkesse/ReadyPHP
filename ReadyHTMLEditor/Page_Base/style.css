@@ -92,6 +92,7 @@ ul {
 
 xmp {
     padding: 10px 10px 10px 50px;
+	font-size: 16px;
 }
 
 b {
@@ -770,6 +771,11 @@ h2 {
 /* overflow auto */
 .ovfa {
     overflow: auto;
+}
+
+/* overflow-y auto */
+.ovfy {
+    overflow-y: auto;
 }
 
 /* overflow hidden */

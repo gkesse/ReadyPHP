@@ -1,1 +1,12 @@
-<h1>Apprendre à Programmer en C++</h1><br>C++ est un langage de programmation orienté objet. Le but de ce tutoriel est de vous apprendre à programmer en C++.<br><br>d<br><br><br><br><br><br><br><br>
+<h1>Apprendre à Programmer en C++</h1><br>C++ est un langage de programmation orienté objet. Le but de ce tutoriel est de vous apprendre à programmer en C++.<br><br><h1>Auteur </h1><br>Je suis <b>Gerard KESSE</b>,<br>Ingénieur en Développement Informatique C/C++/Qt, <br>Avec à la fois des compétences en Systèmes Embarqués et en Robotique.<br><br>Formé à Polytech'Montpellier, Je suis un professionnel de conception de projets logiciel applicatif ou embarqué dans les secteurs de l'Aéronautique, de la Robotique, des Drones et de la Vision par Ordinateur. Aussi, Je reste ouvert à d'autres types de secteurs tels que l’Énergie et les Finances.<br><br>Les Sciences de l’Ingénieur sont au cœur du métier d’ingénieur. Sur le site <br><b>ReadyDev</b>, la Plateforme de Développement Continu, dont j'en suis le concepteur, vous trouverez des cours et des tutoriels adaptés aux sciences de l’ingénieur.<br><br><h1>Installation sous Windows avec MinGW</h1><br><h2>Téléchargements</h2><br><b>Notepad++ :</b><br><a href="https://notepad-plus-plus.org/fr/">https://notepad-plus-plus.org/fr/</a><br><br><b>MinGW :</b><br><a href="http://www.mingw.org/">http://www.mingw.org/</a><br><br><h2>Installation de MinGW</h2><br><b>Packages MinGW :</b><br>mingw33-base<br>mingw32-gcc-g++<br><br><h2>Installation de Notepad++</h2><br><b>Plugins Notepad++ :</b><br>TextFX<br>NppExport<br><br><h1>Compilation d’un projet C++ avec MinGW</h1><br><h2>Compiler un projet C++ avec un fichier source</h2><br><b>Objectif :</b><br>Compiler un projet C++ avec un fichier source.<br><br><b>Implémentation :</b><br>Afficher un message dans la console (Hello World).<br><br><b>Résultat :</b><br><div class="txal ovfa"><img src="Image_01.png" alt="Image.png"></div><br><b>Dossier projet :</b><br><br><br><b>src/main.cpp</b><br><pre><code class="">
+//===============================================
+#include <iostream>
+//===============================================
+using namespace std;
+//===============================================
+int main(int argc, char** argv) {
+    cout &lt;&lt; "Hello World\n";
+    return 0;
+}
+//===============================================
+</code></pre><br><br><br><br><br><br><b>Compilation du projet :</b><br>g++ -c src/main.cpp -o build/main.o<br>g++ -o bin/GProject.exe build/main.o<br><br><b>Exécution du projet :</b><br>bin/GProject.exe<br><br><br>

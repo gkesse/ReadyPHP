@@ -1,6 +1,6 @@
 //===============================================
-function commande(nom, argument){
-	switch(nom){
+function commande(name, argument){
+	switch(name){
 	case "createLink":
 	case "insertImage":
 		argument = prompt("Quelle est l'adresse ?");
@@ -11,13 +11,15 @@ function commande(nom, argument){
 		argument = '';
 	}
 
-	switch(nom){
-	case "createLinkO":
-		var selected = document.getSelection();
-		document.execCommand("insertHTML",false,"<a href='"+argument+"'>"+selected+"</a>");
+	switch(name){
+	case "code":
+		GEditor.Instance().editCode();
+		break;
+	case "insertImage":
+		GEditor.Instance().editImage(argument);
 		break;
 	default:
-		document.execCommand(nom, false, argument);
+		document.execCommand(name, false, argument);
 		break;
 	}
 }
@@ -40,13 +42,12 @@ function saveFile() {
 	var m_codeEditorId = document.getElementById("codeEditorId");
 	var m_data = encodeURIComponent(m_codeEditorId.innerHTML);
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
+	xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
 	xmlhttp.send();
 }
 //===============================================
 function saveFileKey(e) {
 	if (e.code == 'KeyS' && (e.ctrlKey || e.metaKey)) {
-		e.stopPropagation();
 		e.preventDefault();
 		saveFile();
 	}
@@ -65,14 +66,14 @@ function readFile() {
 }
 //===============================================
 function deleteStyle(e) {
-	var m_res = confirm("Voulez-vous supprimer le style associé au texte ?");
+	/*var m_res = confirm("Voulez-vous supprimer le style associé au texte ?");
 	if(m_res == false) return;
 	e.stopPropagation();
 	e.preventDefault();
 	var m_clipboardData = e.clipboardData || window.clipboardData;
-	var m_data = m_clipboardData.getData("text/plain");
+	var m_data = m_clipboardData.getData("text");
 	var m_codeEditorId = document.getElementById("codeEditorId");
-	m_codeEditorId.innerHTML += m_data;
+	m_codeEditorId.innerHTML += m_data;*/
 }
 //===============================================
 readFile();

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     require "GAutoloadRegister.php";
     
     $m_data = GJson::Instance()->getData("/Page_Base/PageEditor.json");
@@ -9,6 +9,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>ReadyHTMLEditor</title>
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
 		<!-- ============================================ -->
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Aclonica"/>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Akronim"/>
@@ -16,8 +17,14 @@
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Archivo Narrow"/>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<!-- ============================================ -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<!-- ============================================ -->
 		<link rel="stylesheet" href="style.css" />
 		<script src="editeur.js"></script>
+		<!-- ============================================ -->
 	</head>
 	<body onkeypress="saveFileKey(event);">
 		<!-- ============================================ -->
@@ -115,7 +122,7 @@
 			<button class="evta pddc ftsb" type="button" title="Texte Justifié" onclick="commande('justifyfull');"><i class="fa fa-align-justify"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Puces" onclick="commande('insertunorderedlist');"><i class="fa fa-list"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Puces Ordonnées" onclick="commande('insertorderedlist');"><i class="fa fa-list-ol"></i></button>		
-			<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
+			<button class="evta pddc ftsb" type="button" title="Ajouter un Code" onclick="commande('code');"><i class="fa fa-code"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Souligné" onclick="commande('justifyfull');"><i class="fa fa-image"></i></button>		
 			<!-- ============================================ -->
@@ -129,6 +136,8 @@
 				<option value="h6">Titre 6</option>
 			</select>
 		</div>
+		<!-- ============================================ -->
+		<script src="GEditor.js"></script>
 		<!-- ============================================ -->
 	</body>
 </html>
