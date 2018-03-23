@@ -70,6 +70,19 @@ var GEditor = (function() {
 				var m_data = m_clipboardData.getData("text");
 				var m_replace = m_data.replace(/\n/g, "<br>");
 				document.execCommand("insertHTML",false,m_replace);
+            },
+            //===============================================
+            viewPage: function() {
+				var m_viewPageId = document.getElementById("viewPageId");
+				var m_codeEditorId = document.getElementById("codeEditorId");
+				m_viewPageId.innerHTML = m_codeEditorId.innerHTML;
+
+            },
+            //===============================================
+            viewCode: function() {
+				var m_viewCodeId = document.getElementById("viewCodeId");
+				var m_codeEditorId = document.getElementById("codeEditorId");
+				m_viewCodeId.value = m_codeEditorId.innerHTML;
             }
             //===============================================
         };

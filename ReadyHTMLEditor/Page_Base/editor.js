@@ -27,16 +27,12 @@ function getCommand(name, arg){
 	}
 }
 //===============================================
-function codeHtml(){
-	var m_codeHtmlId = document.getElementById("codeHtmlId");
-	var m_codeEditorId = document.getElementById("codeEditorId");
-	m_codeHtmlId.value = m_codeEditorId.innerHTML;
+function viewCode(){
+	GEditor.Instance().viewCode();
 }
 //===============================================
-function codeView(){
-	var m_codeViewId = document.getElementById("codeViewId");
-	var m_codeEditorId = document.getElementById("codeEditorId");
-	m_codeViewId.innerHTML = m_codeEditorId.innerHTML;
+function viewPage(){
+	GEditor.Instance().viewPage();
 }
 //===============================================
 function saveFile() {

@@ -32,7 +32,7 @@
 				<!-- ============================================ -->
 				<div class="pgCt10">
 					<div class="bgra">
-						<h1 class="bgra pgCt20" id="Sommaire">
+						<h1 class="bgra pgCt20" id="SommairePro">
 							<a class="clrb" href="#">
 								Sommaire
 							</a>
@@ -57,8 +57,8 @@
 				<!-- ============================================ -->
 				<div class="pgCt10">
 					<div class="brda">
-						<h1 class="bgra pgCt20" id="Interface_Edition">
-							<a class="clrb" href="#Sommaire">
+						<h1 class="bgra pgCt20 bdbb" id="Interface_Edition">
+							<a class="clrb" href="#SommairePro">
 								Interface Edition
 							</a>
 						</h1>
@@ -73,31 +73,31 @@
 				<div class="pgCt10">
 					<div class="brda">
 						<h1 class="bgra pgCt20" id="Interface_Vue">
-							<a class="clrb" href="#Sommaire">
+							<a class="clrb" href="#SommairePro">
 								Interface Vue
 							</a>
 						</h1>
 						<div class="bdbb">
-							<button class="evta" type="button" onclick="codeView();">Aperçu</button>
+							<button class="evta" type="button" onclick="viewPage();">Aperçu</button>
 						</div>
 						<div class="pgCt10 ovfa txal">
-							<div class="hghd" id="codeViewId"></div>
+							<div class="hghd" id="viewPageId"></div>
 						</div>
 					</div>
 				</div>
 				<!-- ============================================ -->
 				<div class="pgCt10">
 					<div class="brda">
-						<h1 class="bgra pgCt10 bdbb" id="Interface_HTML">
-							<a class="clrb" href="#Sommaire">
+						<h1 class="bgra pgCt20 bdbb" id="Interface_HTML">
+							<a class="clrb" href="#SommairePro">
 								Interface HTML
 							</a>
 						</h1>
 						<div class="bdbb">
-							<button class="evta" type="button" onclick="codeHtml();">Obtenir le HTML</button>
+							<button class="evta" type="button" onclick="viewCode();">Obtenir le HTML</button>
 						</div>
 						<div class="ovfa">
-							<textarea class="hghd pgCt10" rows="20" id="codeHtmlId"></textarea>
+							<textarea class="hghd pgCt10" rows="20" id="viewCodeId"></textarea>
 						</div>
 					</div>
 				</div>
