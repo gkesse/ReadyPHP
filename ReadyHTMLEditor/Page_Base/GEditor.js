@@ -135,7 +135,40 @@ var GEditor = (function() {
 						}
 					}
 					var m_br = document.createElement("BR");
+					m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);
+					break;
+					
+				case 'LineBreak2':
+					var m_parentNode = m_startNode;
+					
+					while(1) {
+						alert(m_parentNode.className);
+						if(m_parentNode.className) {
+							if(m_parentNode.className.includes("EditorPage")) break;
+						}
+						m_startNode = m_parentNode;
+						m_parentNode = m_parentNode.parentNode;
+					}
+					
+					alert(m_startNode.className); return;
+					if(!m_data) {
+						document.execCommand("insertHTML", false, "<br>");
+						break;
+					}
+					
+					while(1) {
+						if(m_parentNode.nodeName == "BR") break;
+						if(m_parentNode.nextSibling) {
+							m_parentNode = m_parentNode.nextSibling;
+						}
+						else {
+							m_parentNode = m_parentNode.parentNode; 
+							m_startNode = m_parentNode;
+						}
+					}
+					var m_br = document.createElement("BR");
 					m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);				
+					break;
 				}
             },
             //===============================================
