@@ -122,14 +122,12 @@
 			<button class="evta pddc ftsb" type="button" title="Puces" onclick="getCommand('insertunorderedlist');"><i class="fa fa-list"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Puces Ordonnées" onclick="getCommand('insertorderedlist');"><i class="fa fa-list-ol"></i></button>		
 			<button class="evta pddc ftsb" type="button" title="Ajouter un Code" onclick="getCommand('code');"><i class="fa fa-code"></i></button>		
-			<button class="evta pddc ftsb" type="button" title="Souligné" onclick="getCommand('justifyfull');"><i class="fa fa-image"></i></button>		
-			<button class="evta pddc ftsb" type="button" title="Souligné" onclick="getCommand('justifyfull');"><i class="fa fa-image"></i></button>		
 			<!-- ============================================ -->
-			<select class="brda mnwa mrgd" onchange="getCommand('heading', this.value); this.selectedIndex = 0;">
-				<option value="">Titre</option>
-				<option value="h1">Titre 1</option>
-				<option value="h2">Titre 2</option>
-				<option value="h3">Titre 3</option>
+			<select class="brda mnwa mrgd" onchange="getCommand('readystyle', this.value); this.selectedIndex = 0;">
+				<option value="">ReadyStyle</option>
+				<option value="Title1">Titre 1</option>
+				<option value="Title2">Titre 2</option>
+				<option value="Summary1">Sommaire 1</option>
 				<option value="h4">Titre 4</option>
 				<option value="h5">Titre 5</option>
 				<option value="h6">Titre 6</option>

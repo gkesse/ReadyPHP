@@ -18,8 +18,8 @@ function getCommand(name, arg){
 	case "insertImage":
 		GEditor.Instance().editImage(arg);
 		break;
-	case "heading":
-		GEditor.Instance().editTitle(arg);
+	case "readystyle":
+		GEditor.Instance().editReadyStyle(arg);
 		break;
 	default:
 		document.execCommand(name, false, arg);
