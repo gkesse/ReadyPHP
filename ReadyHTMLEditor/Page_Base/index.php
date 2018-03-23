@@ -63,7 +63,7 @@
 							</a>
 						</h1>
 						<div class="pgCt10 ovfa txal">
-							<div class="hghd" id="codeEditorId" 
+							<div class="hghd EditorPage" id="codeEditorId" 
 							onpaste="pasteText(event);" 
 							contentEditable="true"></div> 
 						</div>
@@ -128,7 +128,7 @@
 				<option value="Title1">Titre 1</option>
 				<option value="Title2">Titre 2</option>
 				<option value="Summary1">Sommaire 1</option>
-				<option value="h4">Titre 4</option>
+				<option value="LineBreak1">Saut de Ligne 1</option>
 				<option value="h5">Titre 5</option>
 				<option value="h6">Titre 6</option>
 			</select>
