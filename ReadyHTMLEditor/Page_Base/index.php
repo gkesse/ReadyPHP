@@ -127,10 +127,10 @@
 				<option value="">ReadyStyle</option>
 				<option value="Title1">Titre 1</option>
 				<option value="Title2">Titre 2</option>
+				<option value="Title3">Titre 3</option>
 				<option value="Summary1">Sommaire 1</option>
 				<option value="LineBreak1">Saut de Ligne 1</option>
-				<option value="h5">Titre 5</option>
-				<option value="h6">Titre 6</option>
+				<option value="LineBreak2">Saut de Ligne 2</option>
 			</select>
 		</div>
 		<!-- ============================================ -->

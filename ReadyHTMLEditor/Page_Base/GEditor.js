@@ -69,6 +69,26 @@ var GEditor = (function() {
 					document.execCommand("insertHTML", false, m_command);
 					break;
 					
+				case 'Title3':
+					if(!m_data) return;
+					var m_length = m_data.length;
+					var m_parentNode = m_startNode.parentNode;
+					if(m_parentNode.nodeName == "B") {
+						m_range.selectNode(m_parentNode);
+						m_selection.addRange(m_range);
+						document.execCommand("insertHTML", false, m_data);
+						break;
+					}
+					m_range.setStart(m_startNode, 0);
+					m_range.setEnd(m_startNode, m_length);
+					m_selection.addRange(m_range);
+					var m_command = '';
+					m_command += '<b>';
+					m_command += m_data;
+					m_command += '</b>';
+					document.execCommand("insertHTML", false, m_command);
+					break;
+					
 				case 'Summary1':
 					if(!m_data) return;
 					var m_length = m_data.length;
