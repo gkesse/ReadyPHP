@@ -111,11 +111,12 @@ var GEditor = (function() {
 								m_startNode = m_parentNode;
 							}
 						}
-						m_parentNode = m_startNode;
-						m_range.selectNode(m_parentNode);
-						m_range.collapse(false);
+						var m_br = document.createElement("BR");
+						m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);
+						/*m_parentNode = m_startNode;
+						m_range.selectNode(m_parentNode.nextSibling);
 						m_selection.addRange(m_range);
-						document.execCommand("insertHTML", false, "<br><br>");
+						document.execCommand("insertHTML", false, "<br><br>");*/
 						alert(m_parentNode.nodeName); return;
 						
 						var m_length = m_data.length;
