@@ -47,11 +47,18 @@ var GEditor = (function() {
 					m_range.setStart(m_startNode, 0);
 					m_range.setEnd(m_startNode, m_length);
 					m_selection.addRange(m_range);
-					m_command += '<h1 class="bgra pgCt20" id="Sommaire">';
+					m_command += '<div class="pgCt10">';
+					m_command += '<div class="bgra">';
+					m_command += '<h1 class="bgra pgCt20 txac" id="Sommaire">';
 					m_command += '<a class="clrb" href="#">';
 					m_command += m_data;
 					m_command += '</a>';
 					m_command += '</h1>';
+					m_command += '<div class="txal pgCt10">';
+					m_command += 'Ajouter un texte ici...';
+					m_command += '</div>';
+					m_command += '</div>';
+					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
 				}
