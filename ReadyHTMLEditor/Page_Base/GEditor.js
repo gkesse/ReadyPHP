@@ -99,58 +99,23 @@ var GEditor = (function() {
 					
 				case 'LineBreak1':
 					var m_parentNode = m_startNode;
-					
-					if(m_parentNode.nodeType == 3) {				
-						while(1) {
-							if(m_parentNode.nodeName == "BR") break;
-							if(m_parentNode.nextSibling) {
-								m_parentNode = m_parentNode.nextSibling;
-							}
-							else {
-								m_parentNode = m_parentNode.parentNode; 
-								m_startNode = m_parentNode;
-							}
-						}
-						var m_br = document.createElement("BR");
-						m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);
-						/*m_parentNode = m_startNode;
-						m_range.selectNode(m_parentNode.nextSibling);
-						m_selection.addRange(m_range);
-						document.execCommand("insertHTML", false, "<br><br>");*/
-						alert(m_parentNode.nodeName); return;
-						
-						var m_length = m_data.length;
-						m_range.setStart(m_parentNode, m_length);
-						m_range.setEnd(m_parentNode, m_length);
-						m_selection.addRange(m_range);
+					if(!m_data) {
 						document.execCommand("insertHTML", false, "<br>");
 						break;
 					}
-
 					
-					if(m_parentNode.nodeName == "A") {
-						m_parentNode = m_parentNode.parentNode;
-						if(m_parentNode.nodeName == "DIV") {
-							if(m_parentNode.className.includes("Summary1")) {
-								m_range.selectNode(m_parentNode);
-								m_selection.addRange(m_range);
-								document.execCommand("insertHTML", false, m_data);
-								break;
-							}
+					while(1) {
+						if(m_parentNode.nodeName == "BR") break;
+						if(m_parentNode.nextSibling) {
+							m_parentNode = m_parentNode.nextSibling;
+						}
+						else {
+							m_parentNode = m_parentNode.parentNode; 
+							m_startNode = m_parentNode;
 						}
 					}
-					m_range.setStart(m_startNode, 0);
-					m_range.setEnd(m_startNode, m_length);
-					m_selection.addRange(m_range);
-					var m_command = '';
-					m_command += '<div class="dibm pdlb Summary1">';
-					m_command += '<span class="fa fa-book clrg pdra"></span>';
-					m_command += '<a class="clrg" href="#'+m_data+'">';
-					m_command += m_data;
-					m_command += '</a>';
-					m_command += '</div>';
-					document.execCommand("insertHTML", false, m_command);
-					break;
+					var m_br = document.createElement("BR");
+					m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);				
 				}
             },
             //===============================================
