@@ -151,6 +151,20 @@ var GEditor = (function() {
 					var m_br = document.createElement("BR");
 					m_parentNode.insertBefore(m_br, m_startNode.nextSibling);				
 					break;
+					
+				case 'LineBreak3':
+					var m_parentNode = m_startNode;
+					
+					while(1) {
+						if(m_parentNode.className) {
+							if(m_parentNode.className.includes("EditorPage")) break;
+						}
+						m_startNode = m_parentNode;
+						m_parentNode = m_parentNode.parentNode;
+					}
+					var m_br = document.createElement("BR");
+					m_parentNode.insertBefore(m_br, m_startNode);				
+					break;
 				}
             },
             //===============================================
