@@ -100,11 +100,24 @@ var GEditor = (function() {
 				case 'LineBreak1':
 					var m_parentNode = m_startNode;
 					
-					if(m_parentNode.nodeType == 3) {
-						/*while(m_parentNode.parentNode.nextSibling) {
-							m_parentNode = m_parentNode.parentNode;
-						}*/
-						alert(m_parentNode.nextSibling); return;
+					if(m_parentNode.nodeType == 3) {				
+						while(1) {
+							if(m_parentNode.nodeName == "BR") break;
+							if(m_parentNode.nextSibling) {
+								m_parentNode = m_parentNode.nextSibling;
+							}
+							else {
+								m_parentNode = m_parentNode.parentNode; 
+								m_startNode = m_parentNode;
+							}
+						}
+						m_parentNode = m_startNode;
+						m_range.selectNode(m_parentNode);
+						m_range.collapse(false);
+						m_selection.addRange(m_range);
+						document.execCommand("insertHTML", false, "<br><br>");
+						alert(m_parentNode.nodeName); return;
+						
 						var m_length = m_data.length;
 						m_range.setStart(m_parentNode, m_length);
 						m_range.setEnd(m_parentNode, m_length);
