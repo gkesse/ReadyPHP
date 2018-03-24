@@ -155,7 +155,7 @@ var GEditor = (function() {
 					if(!m_childTitles.length) break;
 					var m_command = '';
 					m_command += '<div class="dibm Summary1">';
-					for(var i = 0; i < m_childTitles.length; i++) {
+					for(var i = 1; i < m_childTitles.length; i++) {
 						var m_child = m_childTitles[i];
 						var m_title = m_child.firstChild.firstChild.innerText;
 						m_command += '<div class="pdlb">';
@@ -200,7 +200,7 @@ var GEditor = (function() {
 					if(!m_childTitles.length) break;
 					var m_command = '';
 					m_command += '<div class="dibm Summary2">';
-					for(var i = 1; i < m_childTitles.length; i++) {
+					for(var i = 0; i < m_childTitles.length; i++) {
 						var m_child = m_childTitles[i];
 						var m_title = m_child.firstChild.innerText
 						m_command += '<div class="pdlb">';
