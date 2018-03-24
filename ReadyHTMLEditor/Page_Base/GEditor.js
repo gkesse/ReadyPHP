@@ -119,29 +119,52 @@ var GEditor = (function() {
 					break;
 					
 				case 'Summary1':
-					if(!m_data) return;
-					var m_length = m_data.length;
-					var m_parentNode = m_startNode.parentNode;
-					if(m_parentNode.nodeName == "A") {
-						m_parentNode = m_parentNode.parentNode;
-						if(m_parentNode.nodeName == "DIV") {
-							if(m_parentNode.className.includes("Summary1")) {
-								m_range.selectNode(m_parentNode);
-								m_selection.addRange(m_range);
-								document.execCommand("insertHTML", false, m_data);
-								break;
+					var m_parentNode = m_startNode;	
+
+					if(m_data) {
+						for(var m_parentCount = 0; m_parentCount < 3; m_parentCount++) {
+							if(!m_parentNode.parentNode) break;
+							m_parentNode = m_parentNode.parentNode;
+						}
+						
+						if(m_parentCount == 3) {
+							if(m_parentNode.nodeName == "DIV") {
+								if(m_parentNode.className) {
+									if(m_parentNode.className.includes("Summary2")) {
+										m_range.selectNode(m_parentNode);
+										m_selection.addRange(m_range);
+										document.execCommand("insertHTML", false, "");
+									}
+								}
 							}
 						}
+						break;
 					}
-					m_range.setStart(m_startNode, 0);
-					m_range.setEnd(m_startNode, m_length);
-					m_selection.addRange(m_range);
+					
+					m_parentNode = m_parentNode.parentNode.parentNode.parentNode;
+					var m_childNodes = m_parentNode.childNodes;
+					var m_childTitles = Array.from(m_childNodes).filter(function(n) {
+						if(n.firstChild)  {
+							if(n.firstChild.firstChild)  {
+								if(n.firstChild.firstChild.nodeName == "H1") return true;
+							}
+						}
+						return false;
+					});
+					
+					if(!m_childTitles.length) break;
 					var m_command = '';
-					m_command += '<div class="dibm pdlb Summary1">';
-					m_command += '<span class="fa fa-book clrg pdra"></span>';
-					m_command += '<a class="clrg" href="#'+m_data+'">';
-					m_command += m_data;
-					m_command += '</a>';
+					m_command += '<div class="dibm Summary1">';
+					for(var i = 0; i < m_childTitles.length; i++) {
+						var m_child = m_childTitles[i];
+						var m_title = m_child.firstChild.firstChild.innerText;
+						m_command += '<div class="pdlb">';
+						m_command += '<span class="fa fa-book clrg pdra"></span>';
+						m_command += '<a class="clrg" href="#'+m_title+'">';
+						m_command += m_title;
+						m_command += '</a>';
+						m_command += '</div>';
+					}
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
@@ -177,7 +200,7 @@ var GEditor = (function() {
 					if(!m_childTitles.length) break;
 					var m_command = '';
 					m_command += '<div class="dibm Summary2">';
-					for(var i = 0; i < m_childTitles.length; i++) {
+					for(var i = 1; i < m_childTitles.length; i++) {
 						var m_child = m_childTitles[i];
 						var m_title = m_child.firstChild.innerText
 						m_command += '<div class="pdlb">';
