@@ -279,18 +279,34 @@ var GEditor = (function() {
 				case 'Shift1':
 					var m_parentNode = m_startNode;
 					if(m_data) {
-						var m_length = m_data.length;
-						m_range.setStart(m_startNode, 0);
-						m_range.setEnd(m_startNode, m_length);
-						m_selection.addRange(m_range);
+						var m_shift = false;
+						if(m_parentNode.parentNode) {
+							m_parentNode = m_parentNode.parentNode;
+							if(m_parentNode.className) {
+								if(m_parentNode.className.includes("ShiftB")) {
+									m_range.selectNode(m_parentNode);
+									m_selection.addRange(m_range);
+									m_shift = true;
+								}
+							}
+						}
+						
+						if(!m_shift) {
+							var m_length = m_data.length;
+							m_range.setStart(m_parentNode, 0);
+							m_range.setEnd(m_parentNode, m_length);
+							m_selection.addRange(m_range);
+						}
 					}
 					else {
 						m_data = 'Ajouter un texte...';
 					}
+					alert(m_startNode.parentNode.className);
+
 					var m_command = '';
 					m_command += '<div class="dibm Shift">';
-					m_command += '<div class="dibm pdld clra">';
-					m_command += m_data;
+					m_command += '<div class="dibm pdld">';
+					m_command += '<div class="dibm ShiftB">'+m_data+'</div>';
 					m_command += '</div>';
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);				

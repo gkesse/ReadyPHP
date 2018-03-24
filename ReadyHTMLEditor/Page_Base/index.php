@@ -67,6 +67,7 @@
 							onpaste="pasteText(event);" 
 							contentEditable="true"></div> 
 						</div>
+						<div class="bdbb"></div>
 					</div>
 				</div>
 				<!-- ============================================ -->
@@ -83,6 +84,7 @@
 						<div class="pgCt10 ovfa txal">
 							<div class="hghd" id="viewPageId"></div>
 						</div>
+						<div class="bdbb"></div>
 					</div>
 				</div>
 				<!-- ============================================ -->
