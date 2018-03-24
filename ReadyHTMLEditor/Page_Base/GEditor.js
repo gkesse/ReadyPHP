@@ -278,7 +278,33 @@ var GEditor = (function() {
 				//===============================================
 				case 'Shift1':
 					var m_parentNode = m_startNode;
-					if(m_data) {
+					var m_position = this.searchNode(m_parentNode, "ShiftB");
+					alert(m_position);
+					if(m_position == -1) {
+						if(m_data) {
+							var m_length = m_data.length;
+							m_range.setStart(m_parentNode, 0);
+							m_range.setEnd(m_parentNode, m_length);
+							m_selection.addRange(m_range);
+						}
+						else {
+							m_data = 'Ajouter un texte...';
+						}
+						var m_command = '';
+						m_command += '<div class="dibm Shift">';
+						m_command += '<div class="dibm pdld bgra clrb ShiftB">';
+						m_command += m_data;
+						m_command += '</div>';
+						m_command += '</div>';
+						document.execCommand("insertHTML", false, m_command);				
+					}
+					else {
+						for(var i = 0; i < m_position; i++) {
+							m_parentNode = m_parentNode.parentNode;
+						}
+						alert(m_parentNode.className);
+					}
+					/*if(m_data) {
 						var m_shift = false;
 						
 						if(m_parentNode.parentNode) {
@@ -310,14 +336,7 @@ var GEditor = (function() {
 					}
 					else {
 						m_data = 'Ajouter un texte...';
-					}					
-					var m_command = '';
-					m_command += '<div class="dibm Shift">';
-					m_command += '<div class="dibm pdld bgra clrb ShiftB">';
-					m_command += m_data;
-					m_command += '</div>';
-					m_command += '</div>';
-					document.execCommand("insertHTML", false, m_command);				
+					}*/
 					break;
 				//===============================================
 				case 'Shift2':
@@ -348,15 +367,17 @@ var GEditor = (function() {
 				var m_parentNode = startNode;
 				var m_position = 0;
 				while(1) {
-					if(m_parentNode.parentNode) {
-						m_position++;
-						m_parentNode = m_parentNode.parentNode;
-						alert(m_parentNode.className);
+					alert(m_parentNode.className);
+					if(m_parentNode.className) {
 						if(m_parentNode.className.includes(className)) break;
 						if(m_parentNode.className.includes("EditorPage")) {
-							m_position = 0;
+							m_position = -1;
 							break;
 						}
+					}
+					if(m_parentNode.parentNode) {
+						m_parentNode = m_parentNode.parentNode;
+						m_position++;
 					}
 					else break;
 				}
