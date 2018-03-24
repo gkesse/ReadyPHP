@@ -280,13 +280,23 @@ var GEditor = (function() {
 					var m_parentNode = m_startNode;
 					if(m_data) {
 						var m_shift = false;
+						
 						if(m_parentNode.parentNode) {
 							m_parentNode = m_parentNode.parentNode;
 							if(m_parentNode.className) {
 								if(m_parentNode.className.includes("ShiftB")) {
-									m_range.selectNode(m_parentNode);
-									m_selection.addRange(m_range);
-									m_shift = true;
+									var m_childNode = m_parentNode;
+									if(m_parentNode.parentNode) {
+										m_parentNode = m_parentNode.parentNode;
+										if(m_parentNode.className.includes("Shift")) {
+											var m_cloneNode = m_parentNode.cloneNode(true);
+											while(m_childNode.firstChild) {
+												m_childNode.removeChild(m_childNode.firstChild);
+											}
+											m_childNode.appendChild(m_cloneNode);
+											break;
+										}
+									}
 								}
 							}
 						}
@@ -300,13 +310,11 @@ var GEditor = (function() {
 					}
 					else {
 						m_data = 'Ajouter un texte...';
-					}
-					alert(m_startNode.parentNode.className);
-
+					}					
 					var m_command = '';
 					m_command += '<div class="dibm Shift">';
-					m_command += '<div class="dibm pdld">';
-					m_command += '<div class="dibm ShiftB">'+m_data+'</div>';
+					m_command += '<div class="dibm pdld bgra clrb ShiftB">';
+					m_command += m_data;
 					m_command += '</div>';
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);				
@@ -334,6 +342,25 @@ var GEditor = (function() {
 					}
 					break;
 				}
+            },
+            //===============================================
+            searchNode: function(startNode, className) {
+				var m_parentNode = startNode;
+				var m_position = 0;
+				while(1) {
+					if(m_parentNode.parentNode) {
+						m_position++;
+						m_parentNode = m_parentNode.parentNode;
+						alert(m_parentNode.className);
+						if(m_parentNode.className.includes(className)) break;
+						if(m_parentNode.className.includes("EditorPage")) {
+							m_position = 0;
+							break;
+						}
+					}
+					else break;
+				}
+				return m_position;
             },
             //===============================================
             pasteText: function(e) {
