@@ -9,11 +9,11 @@ var GEditor = (function() {
         return {
             //===============================================
             editCode: function() {
-				var m_selected = '';
-				m_selected += '<pre><xmp class="ovfa prettyprint linenums">';
-				m_selected += document.getSelection();
-				m_selected += '</xmp></pre>';
-				document.execCommand("insertHTML",false,m_selected);
+				var m_selection = '';
+				m_selection += '<pre><xmp class="ovfa prettyprint linenums">';
+				m_selection += document.getSelection();
+				m_selection += '</xmp></pre>';
+				document.execCommand("insertHTML",false,m_selection);
             },
             //===============================================
             editImage: function(arg) {
@@ -312,25 +312,18 @@ var GEditor = (function() {
 					break;
 				//===============================================
 				case 'Shift2':
-					var m_parentNode = m_startNode;					
-					if(m_data) {
-						for(var m_parentCount = 0; m_parentCount < 2; m_parentCount++) {
-							if(!m_parentNode.parentNode) break;
-							m_parentNode = m_parentNode.parentNode;
-						}
-						if(m_parentCount == 2) {
-							if(m_parentNode.nodeName == "DIV") {
-								if(m_parentNode.className) {
-									if(m_parentNode.className.includes("Shift")) {
-										m_range.selectNode(m_parentNode);
-										m_selection.addRange(m_range);
-										document.execCommand("insertHTML", false, m_data);
-									}
-								}
-							}
-						}
-						break;
+					var m_parentNode = m_startNode;
+					var m_position = this.searchNode(m_parentNode, "ShiftB");
+					if(m_position == -1) break;
+					for(var i = 0; i < m_position; i++) {
+						m_parentNode = m_parentNode.parentNode;
 					}
+					var m_contentHTML = m_parentNode.innerHTML;
+					m_parentNode = m_parentNode.parentNode;
+					var m_childNode = m_parentNode;
+					m_range.selectNode(m_childNode);
+					m_selection.addRange(m_range);
+					document.execCommand("insertHTML", false, m_contentHTML);
 					break;
 				}
             },
