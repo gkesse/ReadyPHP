@@ -146,6 +146,57 @@ var GEditor = (function() {
 					document.execCommand("insertHTML", false, m_command);
 					break;
 					
+				case 'Summary2':
+					var m_parentNode = m_startNode;
+					var m_childNodes = m_parentNode.childNodes;
+					var m_childTitles = Array.from(m_childNodes).filter(function(n) {
+						if(n.nodeName == "H2") return true;
+						return false;
+					});
+					if(!m_childTitles.length) break;
+					var m_command = '';
+					m_command += '<div class="dibm Summary2">';
+					for(var i = 0; i < m_childTitles.length; i++) {
+						var m_child = m_childTitles[i];
+						var m_title = m_child.firstChild.innerText
+						m_command += '<div class="pdlb">';
+						m_command += '<span class="fa fa-book clrg pdra"></span>';
+						m_command += '<a class="clrg" href="#'+m_title+'">';
+						m_command += m_title;
+						m_command += '</a>';
+						m_command += '</div>';
+					}
+					m_command += '</div>';
+					document.execCommand("insertHTML", false, m_command);
+					return;
+					
+					if(!m_data) return;
+					var m_length = m_data.length;
+					var m_parentNode = m_startNode.parentNode;
+					if(m_parentNode.nodeName == "A") {
+						m_parentNode = m_parentNode.parentNode;
+						if(m_parentNode.nodeName == "DIV") {
+							if(m_parentNode.className.includes("Summary1")) {
+								m_range.selectNode(m_parentNode);
+								m_selection.addRange(m_range);
+								document.execCommand("insertHTML", false, m_data);
+								break;
+							}
+						}
+					}
+					m_range.setStart(m_startNode, 0);
+					m_range.setEnd(m_startNode, m_length);
+					m_selection.addRange(m_range);
+					var m_command = '';
+					m_command += '<div class="dibm pdlb Summary1">';
+					m_command += '<span class="fa fa-book clrg pdra"></span>';
+					m_command += '<a class="clrg" href="#'+m_data+'">';
+					m_command += m_data;
+					m_command += '</a>';
+					m_command += '</div>';
+					document.execCommand("insertHTML", false, m_command);
+					break;
+					
 				case 'LineBreak1':
 					var m_parentNode = m_startNode;
 					if(!m_data) {

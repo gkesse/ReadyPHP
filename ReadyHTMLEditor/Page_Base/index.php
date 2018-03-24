@@ -130,6 +130,7 @@
 				<option value="Title2">Titre 2</option>
 				<option value="Title3">Titre 3</option>
 				<option value="Summary1">Sommaire 1</option>
+				<option value="Summary2">Sommaire 2</option>
 				<option value="LineBreak1">Saut de Ligne 1</option>
 				<option value="LineBreak2">Saut de Ligne 2</option>
 				<option value="LineBreak3">Saut de Ligne 3</option>
