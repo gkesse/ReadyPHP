@@ -77,7 +77,6 @@ var GEditor = (function() {
 						m_parentNode = m_parentNode.parentNode;
 						if(m_parentNode.nodeName == "H2") {
 							if(m_parentNode.className.includes("Title2")) {
-								m_parentNode = m_parentNode.parentNode.parentNode;
 								m_range.selectNode(m_parentNode);
 								m_selection.addRange(m_range);
 								document.execCommand("insertHTML", false, m_data);
