@@ -482,6 +482,10 @@ b {
     font-weight: bold;
 }
 
+.ftwn {
+    font-weight: normal;
+}
+
 /* font awesome */
 .ftaa {
     background: rgba(255,255,255,0.2);
