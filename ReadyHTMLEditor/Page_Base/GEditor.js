@@ -84,12 +84,14 @@ var GEditor = (function() {
 							}
 						}
 					}
+					m_parentNode = m_startNode;
+					var m_title = m_parentNode.parentNode.previousSibling.firstChild.innerText;
 					m_range.setStart(m_startNode, 0);
 					m_range.setEnd(m_startNode, m_length);
 					m_selection.addRange(m_range);
 					var m_command = '';
 					m_command += '<h2 class="ftwn Title2" id="'+m_data+'">';
-					m_command += '<a class="bgra dibm ftfb ftsg clra pgCt10" href="#'+m_data+'">';
+					m_command += '<a class="bgra dibm ftfb ftsg clra pgCt10" href="#'+m_title+'">';
 					m_command += m_data;
 					m_command += '</a>';
 					m_command += '</h2>';
