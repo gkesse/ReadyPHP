@@ -279,7 +279,6 @@ var GEditor = (function() {
 				case 'Shift1':
 					var m_parentNode = m_startNode;
 					var m_position = this.searchNode(m_parentNode, "ShiftB");
-					alert(m_position);
 					if(m_position == -1) {
 						if(m_data) {
 							var m_length = m_data.length;
@@ -302,7 +301,13 @@ var GEditor = (function() {
 						for(var i = 0; i < m_position; i++) {
 							m_parentNode = m_parentNode.parentNode;
 						}
-						alert(m_parentNode.className);
+						var m_childNode = m_parentNode;
+						m_parentNode = m_parentNode.parentNode;
+						var m_cloneNode = m_parentNode.cloneNode(true);
+						while(m_childNode.firstChild) {
+							m_childNode.removeChild(m_childNode.firstChild);
+						}
+						m_childNode.appendChild(m_cloneNode);
 					}
 					/*if(m_data) {
 						var m_shift = false;
@@ -367,7 +372,6 @@ var GEditor = (function() {
 				var m_parentNode = startNode;
 				var m_position = 0;
 				while(1) {
-					alert(m_parentNode.className);
 					if(m_parentNode.className) {
 						if(m_parentNode.className.includes(className)) break;
 						if(m_parentNode.className.includes("EditorPage")) {
