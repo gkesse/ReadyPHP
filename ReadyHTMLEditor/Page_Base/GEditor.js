@@ -54,7 +54,7 @@ var GEditor = (function() {
 					m_range.setEnd(m_startNode, m_length);
 					m_selection.addRange(m_range);
 					var m_command = '';
-					m_command += '<div class="pgCt10">';
+					m_command += '<div class="pgCt00">';
 					m_command += '<div class="bgra">';
 					m_command += '<h1 class="bgra pgCt20 txac Title1" id="'+m_data+'">';
 					m_command += '<a class="clrb" href="#Sommaire">';
@@ -235,7 +235,42 @@ var GEditor = (function() {
 				var m_viewCodeId = document.getElementById("viewCodeId");
 				var m_codeEditorId = document.getElementById("codeEditorId");
 				m_viewCodeId.value = m_codeEditorId.innerHTML;
-            }
+            },
+            //===============================================
+			saveFile: function() {
+				var m_codeEditorId = document.getElementById("codeEditorId");
+				var m_data = encodeURIComponent(m_codeEditorId.innerHTML);
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
+				xmlhttp.send();
+			},
+			//===============================================
+			saveFileKey: function(e) {
+				if (e.code == 'KeyS' && (e.ctrlKey || e.metaKey)) {
+					e.preventDefault();
+					saveFile();
+				}
+			},
+            //===============================================
+			saveFileText: function() {
+				var m_viewCodeId = document.getElementById("viewCodeId");
+				var m_data = encodeURIComponent(m_viewCodeId.value);
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=textarea.php&d=" + m_data, true);
+				xmlhttp.send();
+			},
+			//===============================================
+			readFile: function() {
+				var m_codeEditorId = document.getElementById("codeEditorId");
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("codeEditorId").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("POST", "ajax.php?r=READ_FILE&f=text.php", true);
+				xmlhttp.send();
+			}
             //===============================================
         };
     }
@@ -252,6 +287,5 @@ var GEditor = (function() {
     //===============================================
 })();
 //===============================================
-// Initialization
-//===============================================
+GEditor.Instance().readFile();
 //===============================================

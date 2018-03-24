@@ -95,6 +95,7 @@
 						</h1>
 						<div class="bdbb">
 							<button class="evta" type="button" onclick="viewCode();">Obtenir le HTML</button>
+							<button class="evta" type="button" onclick="saveFileText();"><i class="fa fa-save"></i></button>
 						</div>
 						<div class="ovfa">
 							<textarea class="hghd pgCt10" rows="20" id="viewCodeId"></textarea>
