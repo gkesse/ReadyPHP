@@ -72,7 +72,7 @@
 				<!-- ============================================ -->
 				<div class="pgCt10">
 					<div class="brda">
-						<h1 class="bgra pgCt20" id="Interface_Vue">
+						<h1 class="bgra pgCt20 bdbb" id="Interface_Vue">
 							<a class="clrb" href="#SommairePro">
 								Interface Vue
 							</a>
@@ -132,6 +132,7 @@
 				<option value="LineBreak1">Saut de Ligne 1</option>
 				<option value="LineBreak2">Saut de Ligne 2</option>
 				<option value="LineBreak3">Saut de Ligne 3</option>
+				<option value="LineBreak4">Saut de Ligne 4</option>
 			</select>
 		</div>
 		<!-- ============================================ -->

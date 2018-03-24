@@ -162,7 +162,7 @@ var GEditor = (function() {
 						}
 					}
 					var m_br = document.createElement("BR");
-					m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);
+					m_parentNode.parentNode.insertBefore(m_br, m_startNode.nextSibling);
 					break;
 					
 				case 'LineBreak2':
@@ -183,7 +183,7 @@ var GEditor = (function() {
 						}
 					}
 					var m_br = document.createElement("BR");
-					m_parentNode.parentNode.insertBefore(m_br, m_parentNode.nextSibling);
+					m_parentNode.parentNode.insertBefore(m_br, m_startNode);
 					break;
 					
 				case 'LineBreak3':
