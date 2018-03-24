@@ -135,6 +135,8 @@
 				<option value="LineBreak2">Saut de Ligne 2</option>
 				<option value="LineBreak3">Saut de Ligne 3</option>
 				<option value="LineBreak4">Saut de Ligne 4</option>
+				<option value="Shift1">Décalage 1</option>
+				<option value="Shift2">Décalage 2</option>
 			</select>
 		</div>
 		<!-- ============================================ -->

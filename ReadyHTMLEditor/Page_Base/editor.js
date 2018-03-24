@@ -51,7 +51,3 @@ function pasteText(e) {
 	GEditor.Instance().pasteText(e);
 }
 //===============================================
-function trier(n) {
-						if(n.nodeName == "H2") return true;
-						return false;
-					}

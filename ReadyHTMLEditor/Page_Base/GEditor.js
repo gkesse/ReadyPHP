@@ -68,7 +68,7 @@ var GEditor = (function() {
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
-					
+				//===============================================
 				case 'Title2':
 					if(!m_data) return;
 					var m_length = m_data.length;
@@ -97,7 +97,7 @@ var GEditor = (function() {
 					m_command += '</h2>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
-					
+				//===============================================
 				case 'Title3':
 					if(!m_data) return;
 					var m_length = m_data.length;
@@ -117,16 +117,14 @@ var GEditor = (function() {
 					m_command += '</b>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
-					
+				//===============================================
 				case 'Summary1':
 					var m_parentNode = m_startNode;	
-
 					if(m_data) {
 						for(var m_parentCount = 0; m_parentCount < 3; m_parentCount++) {
 							if(!m_parentNode.parentNode) break;
 							m_parentNode = m_parentNode.parentNode;
 						}
-						
 						if(m_parentCount == 3) {
 							if(m_parentNode.nodeName == "DIV") {
 								if(m_parentNode.className) {
@@ -140,7 +138,6 @@ var GEditor = (function() {
 						}
 						break;
 					}
-					
 					m_parentNode = m_parentNode.parentNode.parentNode.parentNode;
 					var m_childNodes = m_parentNode.childNodes;
 					var m_childTitles = Array.from(m_childNodes).filter(function(n) {
@@ -151,7 +148,6 @@ var GEditor = (function() {
 						}
 						return false;
 					});
-					
 					if(!m_childTitles.length) break;
 					var m_command = '';
 					m_command += '<div class="dibm Summary1">';
@@ -168,16 +164,14 @@ var GEditor = (function() {
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
-					
+				//===============================================
 				case 'Summary2':
 					var m_parentNode = m_startNode;	
-
 					if(m_data) {
 						for(var m_parentCount = 0; m_parentCount < 3; m_parentCount++) {
 							if(!m_parentNode.parentNode) break;
 							m_parentNode = m_parentNode.parentNode;
 						}
-						
 						if(m_parentCount == 3) {
 							if(m_parentNode.nodeName == "DIV") {
 								if(m_parentNode.className) {
@@ -191,7 +185,6 @@ var GEditor = (function() {
 						}
 						break;
 					}
-					
 					var m_childNodes = m_parentNode.childNodes;
 					var m_childTitles = Array.from(m_childNodes).filter(function(n) {
 						if(n.nodeName == "H2") return true;
@@ -213,7 +206,7 @@ var GEditor = (function() {
 					m_command += '</div>';
 					document.execCommand("insertHTML", false, m_command);
 					break;
-					
+				//===============================================
 				case 'LineBreak1':
 					var m_parentNode = m_startNode;
 					if(!m_data) {
@@ -234,14 +227,13 @@ var GEditor = (function() {
 					var m_br = document.createElement("BR");
 					m_parentNode.parentNode.insertBefore(m_br, m_startNode.nextSibling);
 					break;
-					
+				//===============================================
 				case 'LineBreak2':
 					var m_parentNode = m_startNode;
 					if(!m_data) {
 						document.execCommand("insertHTML", false, "<br>");
 						break;
 					}
-					
 					while(1) {
 						if(m_parentNode.nodeName == "BR") break;
 						if(m_parentNode.nextSibling) {
@@ -255,7 +247,7 @@ var GEditor = (function() {
 					var m_br = document.createElement("BR");
 					m_parentNode.parentNode.insertBefore(m_br, m_startNode);
 					break;
-					
+				//===============================================
 				case 'LineBreak3':
 					var m_parentNode = m_startNode;
 					
@@ -269,7 +261,7 @@ var GEditor = (function() {
 					var m_br = document.createElement("BR");
 					m_parentNode.insertBefore(m_br, m_startNode.nextSibling);				
 					break;
-					
+				//===============================================
 				case 'LineBreak4':
 					var m_parentNode = m_startNode;
 					
@@ -282,6 +274,48 @@ var GEditor = (function() {
 					}
 					var m_br = document.createElement("BR");
 					m_parentNode.insertBefore(m_br, m_startNode);				
+					break;
+				//===============================================
+				case 'Shift1':
+					var m_parentNode = m_startNode;
+					if(m_data) {
+						var m_length = m_data.length;
+						m_range.setStart(m_startNode, 0);
+						m_range.setEnd(m_startNode, m_length);
+						m_selection.addRange(m_range);
+					}
+					else {
+						m_data = 'Ajouter un texte...';
+					}
+					var m_command = '';
+					m_command += '<div class="dibm Shift">';
+					m_command += '<div class="dibm pdld clra">';
+					m_command += m_data;
+					m_command += '</div>';
+					m_command += '</div>';
+					document.execCommand("insertHTML", false, m_command);				
+					break;
+				//===============================================
+				case 'Shift2':
+					var m_parentNode = m_startNode;					
+					if(m_data) {
+						for(var m_parentCount = 0; m_parentCount < 2; m_parentCount++) {
+							if(!m_parentNode.parentNode) break;
+							m_parentNode = m_parentNode.parentNode;
+						}
+						if(m_parentCount == 2) {
+							if(m_parentNode.nodeName == "DIV") {
+								if(m_parentNode.className) {
+									if(m_parentNode.className.includes("Shift")) {
+										m_range.selectNode(m_parentNode);
+										m_selection.addRange(m_range);
+										document.execCommand("insertHTML", false, m_data);
+									}
+								}
+							}
+						}
+						break;
+					}
 					break;
 				}
             },
