@@ -253,10 +253,12 @@ var GEditor = (function() {
 			},
             //===============================================
 			saveFileText: function() {
+				var m_res = confirm("Êtes vous sûr de vouloir enregistrer les modifications ?");
+				if(!m_res) return;
 				var m_viewCodeId = document.getElementById("viewCodeId");
 				var m_data = encodeURIComponent(m_viewCodeId.value);
 				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=textarea.php&d=" + m_data, true);
+				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
 				xmlhttp.send();
 			},
 			//===============================================
