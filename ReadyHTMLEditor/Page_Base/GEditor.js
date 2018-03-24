@@ -130,7 +130,7 @@ var GEditor = (function() {
 						if(m_parentCount == 3) {
 							if(m_parentNode.nodeName == "DIV") {
 								if(m_parentNode.className) {
-									if(m_parentNode.className.includes("Summary2")) {
+									if(m_parentNode.className.includes("Summary1")) {
 										m_range.selectNode(m_parentNode);
 										m_selection.addRange(m_range);
 										document.execCommand("insertHTML", false, "");
