@@ -104,19 +104,6 @@
 					</div>
 				</div>
 				<!-- ============================================ -->
-				<div class="pgCt10">
-					<div class="brda">
-						<h1 class="bgra pgCt20 bdbb" id="Interface_PHP">
-							<a class="clrb" href="#SommairePro">
-								Interface PHP
-							</a>
-						</h1>
-						<div class="pgCt10 ovfa txal">
-							<textarea class="hghd pgCt10" readonly="true" rows="20" id="viewPHPId"></textarea>
-						</div>
-					</div>
-				</div>
-				<!-- ============================================ -->
 			</div>
 			<!-- ============================================ -->
 		</div>

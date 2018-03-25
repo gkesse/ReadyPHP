@@ -384,14 +384,13 @@ var GEditor = (function() {
             //===============================================
 			saveFile: function() {
 				var m_codeEditorId = document.getElementById("codeEditorId");
-				var m_viewPHPId = document.getElementById("viewPHPId");
+				var m_viewCodeId = document.getElementById("viewCodeId");
 				var m_data = m_codeEditorId.innerHTML;
 				m_data = encodeURIComponent(m_data);
-				m_viewPHPId.innerHTML = m_data;
 				var m_xmlhttp = new XMLHttpRequest();
 				m_xmlhttp.onreadystatechange = function() {
 					if(this.readyState == 4 && this.status == 200) {
-						m_viewPHPId.innerHTML = this.responseText;
+						m_viewCodeId.innerHTML = this.responseText;
 					}
 				}
 				m_xmlhttp.open("POST", "ajax.php", true);
