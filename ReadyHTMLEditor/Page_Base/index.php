@@ -18,7 +18,6 @@
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 		<!-- ============================================ -->
-		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<!-- ============================================ -->
 		<link rel="stylesheet" href="style.css" />
@@ -105,6 +104,19 @@
 					</div>
 				</div>
 				<!-- ============================================ -->
+				<div class="pgCt10">
+					<div class="brda">
+						<h1 class="bgra pgCt20 bdbb" id="Interface_PHP">
+							<a class="clrb" href="#SommairePro">
+								Interface PHP
+							</a>
+						</h1>
+						<div class="pgCt10 ovfa txal">
+							<textarea class="hghd pgCt10" readonly="true" rows="20" id="viewPHPId"></textarea>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================ -->
 			</div>
 			<!-- ============================================ -->
 		</div>
@@ -139,6 +151,7 @@
 				<option value="LineBreak4">Saut de Ligne 4</option>
 				<option value="Shift1">Décalage 1</option>
 				<option value="Shift2">Décalage 2</option>
+				<option value="Code1">Code 1</option>
 			</select>
 		</div>
 		<!-- ============================================ -->

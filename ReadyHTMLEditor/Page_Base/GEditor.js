@@ -325,6 +325,17 @@ var GEditor = (function() {
 					m_selection.addRange(m_range);
 					document.execCommand("insertHTML", false, m_contentHTML);
 					break;
+				//===============================================
+				case 'Code1':
+					if(m_data) break;
+					var m_command = '';
+					m_command += '<div class="Code1">';
+					m_command += '<pre><xmp class="ovfa bgra prettyprint linenums">';
+					m_command += 'Ajouter un code...';
+					m_command += '</xmp></pre>';
+					m_command += '</div>';
+					document.execCommand("insertHTML", false, m_command);
+					break;
 				}
             },
             //===============================================
@@ -349,6 +360,8 @@ var GEditor = (function() {
             },
             //===============================================
             pasteText: function(e) {
+				//var m_res = confirm("Voulez-vous supprimer le style ?");
+				//if(!m_res) return;
 				e.preventDefault();
 				var m_clipboardData = e.clipboardData || window.clipboardData;
 				var m_data = m_clipboardData.getData("text");
@@ -371,10 +384,19 @@ var GEditor = (function() {
             //===============================================
 			saveFile: function() {
 				var m_codeEditorId = document.getElementById("codeEditorId");
-				var m_data = encodeURIComponent(m_codeEditorId.innerHTML);
-				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
-				xmlhttp.send();
+				var m_viewPHPId = document.getElementById("viewPHPId");
+				var m_data = m_codeEditorId.innerHTML;
+				m_data = encodeURIComponent(m_data);
+				m_viewPHPId.innerHTML = m_data;
+				var m_xmlhttp = new XMLHttpRequest();
+				m_xmlhttp.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200) {
+						m_viewPHPId.innerHTML = this.responseText;
+					}
+				}
+				m_xmlhttp.open("POST", "ajax.php", true);
+				m_xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				m_xmlhttp.send("r="+"SAVE_FILE"+"&f="+"text.php"+"&d="+m_data);
 			},
 			//===============================================
 			saveFileKey: function(e) {
@@ -389,21 +411,21 @@ var GEditor = (function() {
 				if(!m_res) return;
 				var m_viewCodeId = document.getElementById("viewCodeId");
 				var m_data = encodeURIComponent(m_viewCodeId.value);
-				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
-				xmlhttp.send();
+				var m_xmlhttp = new XMLHttpRequest();
+				m_xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
+				m_xmlhttp.send();
 			},
 			//===============================================
 			readFile: function() {
 				var m_codeEditorId = document.getElementById("codeEditorId");
-				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.onreadystatechange = function() {
+				var m_xmlhttp = new XMLHttpRequest();
+				m_xmlhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
-						document.getElementById("codeEditorId").innerHTML = this.responseText;
+						m_codeEditorId.innerHTML = this.responseText;
 					}
 				};
-				xmlhttp.open("POST", "ajax.php?r=READ_FILE&f=text.php", true);
-				xmlhttp.send();
+				m_xmlhttp.open("POST", "ajax.php?r=READ_FILE&f=text.php", true);
+				m_xmlhttp.send();
 			}
             //===============================================
         };
