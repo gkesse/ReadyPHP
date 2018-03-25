@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<title>ReadyHTMLEditor</title>
         <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!-- ============================================ -->
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Aclonica"/>
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Akronim"/>
