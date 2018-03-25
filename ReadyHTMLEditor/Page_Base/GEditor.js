@@ -340,7 +340,7 @@ var GEditor = (function() {
                     }
                     var m_command = '';
                     m_command += '<div class="Code1">';
-                    m_command += '<pre><xmp class="ovfa bgra prettyprint linenums">';
+                    m_command += '<pre><xmp class="ovfa prettyprint linenums">';
                     m_command += m_data;
                     m_command += '</xmp></pre>';
                     m_command += '</div>';
