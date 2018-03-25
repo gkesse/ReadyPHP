@@ -384,13 +384,11 @@ var GEditor = (function() {
             //===============================================
 			saveFile: function() {
 				var m_codeEditorId = document.getElementById("codeEditorId");
-				var m_viewCodeId = document.getElementById("viewCodeId");
-				var m_data = m_codeEditorId.innerHTML;
-				m_data = encodeURIComponent(m_data);
+				var m_data = encodeURIComponent(m_codeEditorId.innerHTML);
 				var m_xmlhttp = new XMLHttpRequest();
 				m_xmlhttp.onreadystatechange = function() {
 					if(this.readyState == 4 && this.status == 200) {
-						m_viewCodeId.innerHTML = this.responseText;
+
 					}
 				}
 				m_xmlhttp.open("POST", "ajax.php", true);
@@ -411,20 +409,27 @@ var GEditor = (function() {
 				var m_viewCodeId = document.getElementById("viewCodeId");
 				var m_data = encodeURIComponent(m_viewCodeId.value);
 				var m_xmlhttp = new XMLHttpRequest();
-				m_xmlhttp.open("POST", "ajax.php?r=SAVE_FILE&f=text.php&d=" + m_data, true);
-				m_xmlhttp.send();
+				m_xmlhttp.onreadystatechange = function() {
+					if(this.readyState == 4 && this.status == 200) {
+
+					}
+				}
+				m_xmlhttp.open("POST", "ajax.php", true);
+				m_xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				m_xmlhttp.send("r="+"SAVE_FILE"+"&f="+"text.php"+"&d="+m_data);
 			},
 			//===============================================
 			readFile: function() {
 				var m_codeEditorId = document.getElementById("codeEditorId");
 				var m_xmlhttp = new XMLHttpRequest();
 				m_xmlhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
+					if(this.readyState == 4 && this.status == 200) {
 						m_codeEditorId.innerHTML = this.responseText;
 					}
-				};
-				m_xmlhttp.open("POST", "ajax.php?r=READ_FILE&f=text.php", true);
-				m_xmlhttp.send();
+				}
+				m_xmlhttp.open("POST", "ajax.php", true);
+				m_xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				m_xmlhttp.send("r="+"READ_FILE"+"&f="+"text.php");
 			}
             //===============================================
         };

@@ -14,7 +14,6 @@
     [
         {"name":"Interface Edition","link":"#Interface_Edition"},
         {"name":"Interface Vue","link":"#Interface_Vue"},
-        {"name":"Interface HTML","link":"#Interface_HTML"},
-        {"name":"Interface PHP","link":"#Interface_PHP"}
+        {"name":"Interface HTML","link":"#Interface_HTML"}
     ]
 }
