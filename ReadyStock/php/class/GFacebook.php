@@ -10,8 +10,7 @@
             $this->m_params = array(
                 'app_id' => '174224726598769',
                 'app_secret' => 'd0a7df28bc4b8b76bda3c29d7e94f138',
-                'app_version' => 'v3.0',
-                'app_token' => 'a712963dfb2c6bf6d079e714747a4177'
+                'app_version' => 'v2.10'
             );
         }
         //===============================================
@@ -23,7 +22,13 @@
         }
         //===============================================
         public function run() {
-            var_dump($this->m_params);
+            $lFacebook = new \Facebook\Facebook([
+                'app_id' => $this->m_params['app_id'],
+                'app_secret' => $this->m_params['app_secret'],
+                'default_graph_version' => $this->m_params['app_version']
+            ]);
+            $lResponse = $lFacebook->get('/me');
+            var_dump($lResponse);
         }
         //===============================================
     }
