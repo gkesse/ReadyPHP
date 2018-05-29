@@ -1,4 +1,6 @@
 <?php 
+    namespace ReadyDev;
+    //===============================================
     class GNamespace {
         //===============================================
         private static $m_instance = null;
