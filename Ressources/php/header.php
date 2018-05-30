@@ -1,6 +1,6 @@
 <!-- ============================================ -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <!-- ============================================ -->
         <title>PHP | ReadyDev</title>

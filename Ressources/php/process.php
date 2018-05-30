@@ -26,5 +26,7 @@
 </div> 
 <!-- ============================================ -->
 <script src="/js/class/GProcess.js"></script>
+<script src="/js/class/GFacebook.js"></script>
 <script src="/js/process.js"></script>
+<script src="/js/facebook.js"></script>
 <!-- ============================================ -->

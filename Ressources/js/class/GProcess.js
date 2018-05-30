@@ -56,11 +56,7 @@ var GProcess = (function() {
 				"req=" + "PROCESS_RUN" +
 				"&process=" + process
 				);
-			},
-            //===============================================
-            connectFacebook: function(obj) {
-                
-            }
+			}
             //===============================================
         };
     }

@@ -1,5 +1,5 @@
 //===============================================
-function runProcess(obj, process) {
-    GProcess.Instance().runProcess(obj, process);
+function connectFacebook(obj) {
+    GFacebook.Instance().connectFacebook(obj);
 }
 //===============================================

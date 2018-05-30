@@ -15,14 +15,9 @@
         }
         //===============================================
         public function run() {
-            echo "Test Facebook"."<br/>";
+            echo "Test Facebook"."<br/><br/>";
             
-            $lHtml = '<br/>';
-            $lHtml .= '<div class="Button ProcessButton" onclick="connectFacebook(this)">';
-            $lHtml .= '<i class="Round Facebook fa fa-facebook"></i> Se Connecter via Facebook';
-            $lHtml .= '</div>';
-            
-            echo $lHtml;
+            GPage::Instance()->setPage("/php/facebook.php");
         }
         //===============================================
     }
