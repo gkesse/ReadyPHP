@@ -16,6 +16,27 @@
         //===============================================
         public function run() {
             echo "Je suis ArrayMerge"."<br/>";
+            
+            $lDefaultConfig = array(
+                "OS" => "Windows",
+                "WEB_LANGUAGE" => "PHP",
+                "SERVER" => "WampServer",               
+                "DBSM" => "MySQL"              
+            );
+            $lNewConfig = array(
+                "OS" => "Linux",
+                "SERVER" => "LAMP",               
+            );
+            $lConfig = array_merge($lDefaultConfig, $lNewConfig);
+            
+            echo "<br/>### Default Config"."<br/><br/>";
+            echo "<pre>".print_r($lDefaultConfig, true)."</pre>";
+            
+            echo "<br/>### New Config"."<br/><br/>";
+            echo "<pre>".print_r($lNewConfig, true)."</pre>";
+            
+            echo "<br/>### Merge Config"."<br/><br/>";
+            echo "<pre>".print_r($lConfig, true)."</pre>";
         }
         //===============================================
     }

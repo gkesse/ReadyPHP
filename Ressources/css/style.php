@@ -156,4 +156,5 @@ b {
 
 .MainBlock .Body {
     padding: 10px;
+    overflow: auto;
 }
