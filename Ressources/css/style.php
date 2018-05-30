@@ -138,8 +138,7 @@ b {
     background: rgba(255,255,255,0.0);
     border: 2px solid rgba(255,255,255,0.0);
     text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px;
 }
 
 .MainBlock .Content {
@@ -158,3 +157,29 @@ b {
     padding: 10px;
     overflow: auto;
 }
+
+.MainBlock .Body.Bdy1 {
+    padding-bottom: 5px;
+}
+
+/* ============================================== */
+/* Button */ 
+/* ============================================== */
+
+.Button {
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.Button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.Button:active {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ============================================== */

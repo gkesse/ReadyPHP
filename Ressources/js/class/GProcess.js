@@ -24,7 +24,11 @@ var GProcess = (function() {
                 lXmlhttp.send(
 				"req=" + "PROCESS_RUN"
 				);
-			}
+			},
+            //===============================================
+            runProcess: function(obj, process) {
+                alert(process);
+            }
             //===============================================
         };
     }
