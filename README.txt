@@ -7,7 +7,6 @@ http://www.wampserver.com/
 // WampServer Autoriser Virtual Host
 //===============================================
 C:\wamp\bin\apache\apache2.4.17\conf\httpd.conf
-Decommenter
 LoadModule vhost_alias_module modules/mod_vhost_alias.so
 Include conf/extra/httpd-vhosts.conf
 
