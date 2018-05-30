@@ -17,8 +17,7 @@
         }
         //===============================================
         public function run() {
-            $lData = "J'utilise un Namespace: ".__NAMESPACE__;
-            print_r($lData);
+            echo "Je suis Namespace : ".__NAMESPACE__;
         }
         //===============================================
     }

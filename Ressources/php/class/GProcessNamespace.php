@@ -1,4 +1,7 @@
 <?php 
+    //===============================================
+    use Rd\GNamespace;
+    //===============================================
     class GProcessNamespace extends GProcess {
         //===============================================
         private static $m_instance = null;
@@ -15,7 +18,7 @@
         }
         //===============================================
         public function run() {
-            echo "Je suis Namespace";
+            GNamespace::Instance()->run();
         }
         //===============================================
     }

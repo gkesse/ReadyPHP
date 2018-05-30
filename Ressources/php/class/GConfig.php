@@ -5,7 +5,7 @@
         private $m_dataMap = array();
         //===============================================
         private function __construct() {
-            $this->setData("PROCESS_TYPE", "NAMESPACE");
+            $this->setData("PROCESS_TYPE", "PAGE");
         }
         //===============================================
         public static function Instance() {
