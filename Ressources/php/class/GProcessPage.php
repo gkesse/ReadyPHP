@@ -16,7 +16,6 @@
         //===============================================
         public function run() {
             echo "Je suis Page<br/>";
-            GPage::Instance()->setPage("/php/header.php");
         }
         //===============================================
     }

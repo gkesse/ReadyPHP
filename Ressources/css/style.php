@@ -108,7 +108,7 @@ b {
 /* ============================================== */
 
 .BodyPage {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.0);
 }
 
 .BodyPage.Mrg {
@@ -116,8 +116,9 @@ b {
     margin: auto;
 }
 
-.BodyPage {
-    background: rgba(255,255,255,0.2);
+.BodyPage.Pdd {
+    padding-top: 250px;
+    padding-bottom: 250px;
 }
 
 /* ============================================== */
@@ -125,7 +126,8 @@ b {
 /* ============================================== */
 
 .MainPage {
-    padding: 20px 10px;
+    background: rgba(255,255,255,0.0);
+    border: 2px solid rgba(255,255,255,0.0);
 }
 
 /* ============================================== */
@@ -134,20 +136,24 @@ b {
 
 .MainBlock {
     background: rgba(255,255,255,0.0);
-    border: 2px solid rgba(255,255,255,0.2);
-    min-height: 250px;
-    max-width: 500px;
-    margin: auto;
+    border: 2px solid rgba(255,255,255,0.0);
     text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.MainBlock .Content {
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
 .MainBlock .Title {
     background: rgba(255,255,255,0.2);
-    padding: 10px 10px;
+    padding: 10px;
     font-family: Anton;
     font-size: 25px;
 }
 
 .MainBlock .Body {
-
+    padding: 10px;
 }
