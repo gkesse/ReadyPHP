@@ -1,5 +1,6 @@
 <?php 
     require $_SERVER["DOCUMENT_ROOT"]."/lib/facebook/src/Facebook/autoload.php";
+    use Facebook\Facebook;
     //===============================================
     class GFacebook {
         //===============================================
@@ -22,7 +23,7 @@
         }
         //===============================================
         public function run() {
-            $lFacebook = new \Facebook\Facebook([
+            $lFacebook = new Facebook([
                 'app_id' => $this->m_params['app_id'],
                 'app_secret' => $this->m_params['app_secret'],
                 'default_graph_version' => $this->m_params['app_version']
