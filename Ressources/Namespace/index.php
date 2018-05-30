@@ -1,6 +1,5 @@
 <?php 
     require $_SERVER["DOCUMENT_ROOT"]."/Namespace/GAutoloadRegister.php";
-    //require $_SERVER["DOCUMENT_ROOT"]."/Namespace/GNamespace.php";
-    //use ReadyDev\GNamespace;
+    use Rd\GNamespace;
     GNamespace::Instance()->run();
 ?>

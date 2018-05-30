@@ -1,5 +1,5 @@
 <?php 
-    namespace ReadyDev;
+    namespace Rd;
     //===============================================
     class GNamespace {
         //===============================================
@@ -17,7 +17,7 @@
         }
         //===============================================
         public function run() {
-            $lData = "Bonjour tout le monde";
+            $lData = "J'utilise un Namespace: ".__NAMESPACE__;
             print_r($lData);
         }
         //===============================================

@@ -1,8 +1,6 @@
 <?php
     session_start();
     //===============================================
-    use ReadyDev\GNamespace;
-    //===============================================
     function GAutoloadRegister($classname) {
         $lFilename = dirname(__FILE__).DIRECTORY_SEPARATOR.$classname.".php";
         if (is_readable($lFilename)) {
