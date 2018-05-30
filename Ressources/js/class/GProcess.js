@@ -7,11 +7,19 @@ var GProcess = (function() {
         return {
             //===============================================
             init: function() {
-                this.setProcess();
+                this.setProcess("NAMESPACE");
 			},
             //===============================================
-            setProcess: function() {
+            setProcess: function(process) {
 				var lProcessBody = document.getElementById("ProcessBody");
+				var lProcessButtons = document.getElementsByClassName("ProcessButton");
+                for(var i = 0; i < lProcessButtons.length; i++) {
+                    var lProcessButton = lProcessButtons[i];
+                    lProcessButton.className = lProcessButton.className.replace(" Active", "");
+                    if(lProcessButton.className.includes(process)) {
+                        lProcessButton.className += " Active";
+                    }
+                }
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -22,7 +30,8 @@ var GProcess = (function() {
                 lXmlhttp.open("POST", "/php/req/process.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-				"req=" + "PROCESS_RUN"
+				"req=" + "PROCESS_RUN" +
+				"&process=" + process
 				);
 			},
             //===============================================
@@ -31,7 +40,7 @@ var GProcess = (function() {
 				var lProcessButtons = document.getElementsByClassName("ProcessButton");
                 for(var i = 0; i < lProcessButtons.length; i++) {
                     var lProcessButton = lProcessButtons[i];
-                    lProcessButton.className = lProcessButton.className.replace(" Active", "")
+                    lProcessButton.className = lProcessButton.className.replace(" Active", "");
                 }
                 obj.className += " Active";
                 var lXmlhttp = new XMLHttpRequest();
@@ -44,7 +53,7 @@ var GProcess = (function() {
                 lXmlhttp.open("POST", "/php/req/process.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-				"req=" + "PROCESS_SELECT" +
+				"req=" + "PROCESS_RUN" +
 				"&process=" + process
 				);
             }
