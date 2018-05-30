@@ -27,7 +27,20 @@ var GProcess = (function() {
 			},
             //===============================================
             runProcess: function(obj, process) {
-                alert(process);
+				var lProcessBody = document.getElementById("ProcessBody");
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+						lProcessBody.innerHTML = lData;
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/process.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+				"req=" + "PROCESS_SELECT" +
+				"&process=" + process
+				);
             }
             //===============================================
         };
