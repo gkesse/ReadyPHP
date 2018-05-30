@@ -2,9 +2,6 @@
 // WampServer Telechargement
 //===============================================
 http://www.wampserver.com/
-https://sourceforge.net/projects/wampserver/files/
-https://sourceforge.net/projects/wampserver/files/WampServer%202/
-https://sourceforge.net/projects/wampserver/files/WampServer%202/Wampserver%202.5/
 
 //===============================================
 // WampServer Autoriser Virtual Host
