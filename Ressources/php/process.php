@@ -2,13 +2,13 @@
 <div class="MainBlock">
     <div class="Content">
         <div class="Body Bdy1">
-            <div class="Button" onclick="runProcess(this, 'PAGE')">
+            <div class="Button ProcessButton" onclick="runProcess(this, 'PAGE')">
                 <i class="fa fa-cog"></i> Page
             </div>
-            <div class="Button" onclick="runProcess(this, 'NAMESPACE')">
+            <div class="Button ProcessButton" onclick="runProcess(this, 'NAMESPACE')">
                 <i class="fa fa-cog"></i> Namespace
             </div>
-            <div class="Button" onclick="runProcess(this, 'ARRAY_MERGE')">
+            <div class="Button ProcessButton" onclick="runProcess(this, 'ARRAY_MERGE')">
                 <i class="fa fa-cog"></i> MergeArray
             </div>
         </div>

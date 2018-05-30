@@ -28,6 +28,12 @@ var GProcess = (function() {
             //===============================================
             runProcess: function(obj, process) {
 				var lProcessBody = document.getElementById("ProcessBody");
+				var lProcessButtons = document.getElementsByClassName("ProcessButton");
+                for(var i = 0; i < lProcessButtons.length; i++) {
+                    var lProcessButton = lProcessButtons[i];
+                    lProcessButton.className = lProcessButton.className.replace(" Active", "")
+                }
+                obj.className += " Active";
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
