@@ -15,7 +15,7 @@
         }
         //===============================================
         public function run() {
-            echo "Je suis Namespace<br/>";
+            echo "Je suis Namespace";
         }
         //===============================================
     }

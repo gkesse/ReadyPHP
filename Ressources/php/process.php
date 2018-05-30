@@ -7,5 +7,4 @@
 </div> 
 <!-- ============================================ -->
 <script src="/js/class/GProcess.js"></script>
-<script src="/js/process.js"></script>
 <!-- ============================================ -->
