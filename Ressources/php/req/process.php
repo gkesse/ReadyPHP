@@ -1,7 +1,7 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/php/class/GAutoloadRegister.php";	
 	//===============================================
-    GConfig::Instance()->setData("PROCESS_TYPE", "NAMESPACE");
+    GConfig::Instance()->setData("PROCESS_TYPE", "ARRAY_MERGE");
 	//===============================================
 	$lReq = $_REQUEST["req"];
 	//===============================================

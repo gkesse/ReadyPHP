@@ -17,7 +17,7 @@
         }
         //===============================================
         public function run() {
-            echo "Je suis Namespace : ".__NAMESPACE__;
+            echo "Je suis Namespace : ". __NAMESPACE__ ."<br/>";
         }
         //===============================================
     }
