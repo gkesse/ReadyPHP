@@ -15,7 +15,7 @@
         }
         //===============================================
         public function run() {
-            echo "Je suis ArrayMerge"."<br/>";
+            echo "Test ArrayMerge"."<br/>";
             
             $lDefaultConfig = array(
                 "OS" => "Windows",

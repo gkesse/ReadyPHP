@@ -186,4 +186,17 @@ b {
     background: #051039;
 }
 
+.Button i.Round {
+    background: rgba(255,255,255,0.2);
+    width: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.Button i.Facebook {
+    background: #3b5998;
+}
+
 /* ============================================== */

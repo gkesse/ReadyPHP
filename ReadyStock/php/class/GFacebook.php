@@ -10,8 +10,7 @@
         private function __construct() {
             $this->m_params = array(
                 'app_id' => '174224726598769',
-                'app_secret' => 'd0a7df28bc4b8b76bda3c29d7e94f138',
-                'app_version' => 'v2.10'
+                'app_secret' => 'd0a7df28bc4b8b76bda3c29d7e94f138'
             );
         }
         //===============================================
