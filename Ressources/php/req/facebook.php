@@ -4,7 +4,11 @@
 	$lReq = $_REQUEST["req"];
 	//===============================================
 	if($lReq == "FACEBOOK_CONNECT") {
-        print_r("helloooooooooooooo");
+        GFacebook::Instance()->run();
+	}
+	//===============================================
+	else if($lReq == "FACEBOOK_TOKEN") {
+        GFacebook::Instance()->token();
 	}
 	//===============================================
 ?>
