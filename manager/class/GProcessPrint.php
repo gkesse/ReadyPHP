@@ -15,7 +15,7 @@
         }
         //===============================================
         public function run() {
-			GPrint::Instance()->print("Bonjour tout le monde"); 
+			GPrint::Instance()->printData("Bonjour tout le monde"); 
         }
         //===============================================
     }

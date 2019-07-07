@@ -14,7 +14,7 @@
             return self::$m_instance;
         }
         //===============================================
-        public function print($data) {
+        public function printData($data) {
             echo $data;
         }
         //===============================================

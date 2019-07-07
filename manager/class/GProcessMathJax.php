@@ -15,7 +15,6 @@
         }
         //===============================================
         public function run() {
-			GPrint::Instance()->print("[ GMathJax ] Start "); 
             ?>
             <!DOCTYPE html>
             <html>
