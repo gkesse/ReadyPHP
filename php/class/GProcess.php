@@ -60,11 +60,7 @@
     <div style="
         padding: 50px;
     ">
-        <div style="
-            background-color: rgba(1,1,1,0.2);
-            border: 1px solid rgba(255,255,255,0);
-            min-height: 500px;
-        ">
+        <div class="Main">
         <?php
             $lMenuTitle = "Menu principal";
             $lMenuKey = "menu";

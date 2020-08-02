@@ -128,6 +128,11 @@ span {
 /* ============================================== */
 /* Custom */
 /* ============================================== */
+.Main {
+    background-color: rgba(20,20,0,0.5);
+    border: 1px solid rgba(255,255,255,0);
+    min-height: 500px;
+}
 .Menu {
     border: 1px solid rgba(255,255,255,0);
     display: inline-block;
