@@ -1,0 +1,12 @@
+{
+    "menu":
+    [
+        {"name":"SQLITE","link":"/argv/SQLITE"}
+    ],
+    "sqlite":
+    [
+        {"name":"afficher les tables","link":"/argv/SQLITE/TABLES_SHOW"},
+        {"name":"incrementer une vue","link":"/argv/SQLITE/VIEW_INC"},
+        {"name":"récupérer une vue","link":"/argv/SQLITE/VIEW_GET"}
+    ]
+}

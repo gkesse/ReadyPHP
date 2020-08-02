@@ -14,24 +14,22 @@
             return self::$m_instance;
         }
         //===============================================
-        public function length($str) {
-			$lLength = strlen($str);
-			return $lLength;
+        public function toLower($data) {
+            return strtolower($data);
         }
         //===============================================
-        public function trim($str) {
-			$lTrim = trim($str);
-			return $lTrim;
+        public function toUpper($data) {
+            return strtoupper($data);
         }
         //===============================================
-        public function split($str) {
-			$lSplit = preg_split("/[\s]+=[\s]+/", $str);
-			return $lSplit;
+        public function splitCount($data, $sep) {
+            $lDataMap = explode($sep, $data);
+            return count($lDataMap);
         }
         //===============================================
-        public function explode($str, $sep) {
-			$lExplode = explode($sep, $str);
-			return $lExplode;
+        public function splitGet($data, $sep, $index) {
+            $lDataMap = explode($sep, $data);
+            return $lDataMap[$index];
         }
         //===============================================
     }

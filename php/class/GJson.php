@@ -1,5 +1,5 @@
 <?php   
-    class GSetting {
+    class GJson {
         //===============================================
         private static $m_instance = null;
         //===============================================
@@ -9,26 +9,21 @@
         //===============================================
         public static function Instance() {
             if(is_null(self::$m_instance)) {
-                self::$m_instance = new GSetting();  
+                self::$m_instance = new GJson();  
             }
             return self::$m_instance;
         }
         //===============================================
-        public function load($file) {
-            GFile::Instance()->exist($file);
-			$lFile = fopen($file, "r");
-			
-			while(!feof($lFile)) {
-				$lLine = fgets($lFile);
-				$lLine = GString::Instance()->trim($lLine);
-				if($lLine == "") continue;
-				if($lLine[0] == "#") continue;
-				$lSplit = GString::Instance()->split($lLine);
-				$lKey = $lSplit[0];
-				$lValue = $lSplit[1];
-				GConfig::Instance()->setData($lKey, $lValue);
-			}
-			GConfig::Instance()->showData();
+        public function saveData($file, $data) {
+            $lFile = GFile::Instance()->getPath($file);
+            $lJson = json_encode($data);
+            file_put_contents($lFile, $lJson);
+        }
+        //===============================================
+        public function getData($file) {
+            $lData = GFile::Instance()->getData($file);
+            $lJson = json_decode($lData, true);
+            return $lJson;
         }
         //===============================================
     }
