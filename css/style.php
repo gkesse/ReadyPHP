@@ -11,12 +11,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 *:focus { 
     border: none;
     outline: none;
 }
-
 html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -24,14 +22,12 @@ html {
     scrollbar-color: #5f6681 #051039;
     scrollbar-width: auto;
 }
-
 body {
     background-color: #051039;
     font-family: arial;
     font-size: 16px;
     text-align: center;
 }
-
 button {
     background-color: transparent;
     border: none;
@@ -40,24 +36,21 @@ button {
     color: white;
     cursor: pointer;
 }
-
 input {
     background-color: transparent;
     border: none;
     border-radius: 0;
-    padding: 5px 10px 5px 10px;
+    padding: 2px 10px 2px 10px;
     font-size: 16px;
     color: white;
     width: 100%;
 }
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
     -webkit-text-fill-color: white ;
     transition: background-color 5000s ease-in-out 0s;
 }
-
 select {
     background-color: transparent;
     border: none;
@@ -65,7 +58,6 @@ select {
     color: white;
     cursor: pointer;
 }
-
 textarea {
     background-color: transparent;
     border: none;
@@ -77,26 +69,21 @@ textarea {
     width: 100%;
     resize: none;
 }
-
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
-
 xmp {
     padding: 10px 10px 10px 50px;
 	font-size: 16px;
 }
-
 a {
     text-decoration: none;
 }
-
 b {
     color: cyan;
 }
-
 hr {
     background-color: #051039; 
     border: none;
@@ -106,7 +93,6 @@ hr {
     margin-top: 20px;
     text-align: center;
 }
-
 hr:after {
     content: "\f164";
     font-family: FontAwesome;
@@ -121,7 +107,6 @@ hr:after {
     line-height: 40px;
     border-radius: 20px;
 }
-
 span {
     word-break: break-all;
 }
@@ -144,5 +129,37 @@ span {
     min-width: 200px;
     padding: 10px;
     display: block;
+}
+.FieldRow {
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0px;
+    border: 1px solid teal;
+    margin: 5px;
+}
+.Label {
+    background-color: teal;
+    display: inline-block;
+    padding: 5px 10px;
+    min-width: 150px;
+    font-size: 16px;
+    margin: 0px;
+    text-align: left;
+}
+.Field {
+    display: inline-block;
+    min-width: 300px;
+    font-size: 16px;
+    margin: 0px;
+    text-align: left;
+}
+.ButtonRow {
+    font-size: 0px;
+    text-align: right;
+}
+.Button {
+    background-color: teal;
+    display: inline-block;
+    min-width: 100px;
+    margin: 5px;
 }
 /* ============================================== */
