@@ -29,6 +29,7 @@ class GWidget {
         if($key == "sqlite") {return new GSQLiteUi();}
         if($key == "timesheet") {return new GTimesheet();}
         if($key == "debug") {return new GDebug();}
+        if($key == "error") {return new GError();}
         // default
         return new GWidget();
     }

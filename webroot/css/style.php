@@ -196,6 +196,12 @@ span {
     white-space: nowrap;
 }
 /* ============================================== */
+/* error */
+.error_id {
+    padding: 50px 10px;
+    text-align: center;
+}
+/* ============================================== */
 /* html */
 .html_id {
     position: relative;
