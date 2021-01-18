@@ -32,6 +32,7 @@ class GWidget {
         if($key == "phpspreadsheet") {return new GPhpSpreadsheet();}
         if($key == "dompdf") {return new GDomPdf();}
         if($key == "jpgraph") {return new GJpGraph();}
+        if($key == "filesystem") {return new GFilesystem();}
         if($key == "debug") {return new GDebug();}
         // default
         return new GError();

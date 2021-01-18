@@ -15,10 +15,13 @@ class GWindow extends GWidget {
         $this->m_widgetMap->addStack("home/login", "login", "Connexion");
         $this->m_widgetMap->addStack("home/sqlite", "sqlite", "SQLite");
         $this->m_widgetMap->addStack("home/timesheet", "timesheet", "Feuille de temps");
+        //
         $this->m_widgetMap->addStack("home/library", "library", "Librairie");
         $this->m_widgetMap->addStack("home/library/phpspreadsheet", "phpspreadsheet", "PhpSpreadsheet");
         $this->m_widgetMap->addStack("home/library/dompdf", "dompdf", "DomPdf");
         $this->m_widgetMap->addStack("home/library/jpgraph", "jpgraph", "JpGraph");
+        $this->m_widgetMap->addStack("home/library/filesystem", "filesystem", "GFilesystem");
+        //
         $this->m_widgetMap->addStack("home/debug", "debug", "Debug");
     }
     //===============================================

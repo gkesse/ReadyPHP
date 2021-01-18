@@ -22,6 +22,7 @@ class GManager {
         $this->mgr->app->logo_web = "/data/img/logo_web.png";
         $this->mgr->app->logo_flat = "/data/img/logo_flat.png";
         $this->mgr->app->logo_org = "/data/img/logo_org.png";
+        $this->mgr->app->filesystem = ".";
     }
     //===============================================
     public static function Instance() {
@@ -156,6 +157,8 @@ class sGApp {
     public $logo_web;
     public $logo_flat;
     public $logo_org;
+    // filesystem
+    public $filesystem;
 }
 //===============================================
 ?>
