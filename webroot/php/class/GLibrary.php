@@ -1,6 +1,6 @@
 <?php   
 //===============================================
-class GError extends GWidget {
+class GLibrary extends GWidget {
     //===============================================
     public function __construct() {
         
@@ -9,8 +9,12 @@ class GError extends GWidget {
     // method
     //===============================================
     public function run() {
-        echo sprintf("<div class='error_id'>\n");
-        echo sprintf("<div>Page non trouvée</div>\n");
+        echo sprintf("<div class='library_id'>\n");
+        GWidget::Create("listbox")->start();
+        GWidget::Create("listbox")->addItem("/home/library/phpspreadsheet", "PhpSpreadsheet", "book");
+        GWidget::Create("listbox")->addItem("/home/library/dompdf", "DomPdf", "book");
+        GWidget::Create("listbox")->addItem("/home/library/jpgraph", "JpGraph", "book");
+        GWidget::Create("listbox")->end();
         echo sprintf("</div>\n");
     }
     //===============================================

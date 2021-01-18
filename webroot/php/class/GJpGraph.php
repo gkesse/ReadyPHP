@@ -1,6 +1,6 @@
 <?php   
 //===============================================
-class GError extends GWidget {
+class GJpGraph extends GWidget {
     //===============================================
     public function __construct() {
         
@@ -10,7 +10,7 @@ class GError extends GWidget {
     //===============================================
     public function run() {
         echo sprintf("<div class='error_id'>\n");
-        echo sprintf("<div>Page non trouvée</div>\n");
+        echo sprintf("<div>GJpGraph</div>\n");
         echo sprintf("</div>\n");
     }
     //===============================================

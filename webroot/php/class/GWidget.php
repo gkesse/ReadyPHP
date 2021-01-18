@@ -28,10 +28,13 @@ class GWidget {
         if($key == "login") {return new GLogin();}
         if($key == "sqlite") {return new GSQLiteUi();}
         if($key == "timesheet") {return new GTimesheet();}
+        if($key == "library") {return new GLibrary();}
+        if($key == "phpspreadsheet") {return new GPhpSpreadsheet();}
+        if($key == "dompdf") {return new GDomPdf();}
+        if($key == "jpgraph") {return new GJpGraph();}
         if($key == "debug") {return new GDebug();}
-        if($key == "error") {return new GError();}
         // default
-        return new GWidget();
+        return new GError();
     }
     //===============================================
     // method
