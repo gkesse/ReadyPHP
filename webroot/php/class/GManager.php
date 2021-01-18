@@ -11,14 +11,14 @@ class GManager {
         $this->mgr = new sGManager();
         // app
         $this->mgr->app = new sGApp();
-        $this->mgr->app->app_name = "SogetekCRM";
+        $this->mgr->app->app_name = "ReadyPHP";
         $this->mgr->app->lang = "fr";
         $this->mgr->app->title = $this->mgr->app->app_name;
         $this->mgr->app->google_desc = "";
         $this->mgr->app->debug = &$_SESSION["debug"];
         $this->mgr->app->last_url = &$_SESSION["last_url"];
         $this->mgr->app->sqlite_db_path = "/data/sqlite/config.dat";
-        $this->mgr->app->google_fonts = "/libs/google_fonts/1.0.0";
+        $this->mgr->app->google_fonts = "/libs/google_fonts";
         $this->mgr->app->logo_web = "/data/img/logo_web.png";
         $this->mgr->app->logo_flat = "/data/img/logo_flat.png";
         $this->mgr->app->logo_org = "/data/img/logo_org.png";

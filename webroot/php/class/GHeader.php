@@ -47,7 +47,7 @@ class GHeader extends GWidget {
         */
         //===============================================
         // font_awesome
-        echo sprintf("<link rel='stylesheet' type='text/css' href='/libs/font_awesome/4.7.0/css/font-awesome.min.css'/>\n");
+        echo sprintf("<link rel='stylesheet' type='text/css' href='/libs/font_awesome/css/font-awesome.min.css'/>\n");
         //===============================================
         // google_fonts
         GManager::Instance()->loadFont();
