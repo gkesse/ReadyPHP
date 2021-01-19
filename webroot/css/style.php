@@ -212,9 +212,12 @@ span {
     border-bottom: 1px solid #ffffff;
 }
 .filesystem_id .body .file {
+    display: block;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    width: 100%;
+    text-align: left;
 }
 .filesystem_id .body .file:hover {
     background-color: <?php echo $config['app_light_color']; ?>;

@@ -115,6 +115,22 @@ class GManager {
         header($lLocation);
     }
     //===============================================
+    public function redirectPost() {
+        if(!empty($_POST) OR !empty($_FILES)) {
+            $_SESSION["_SAVE_POST_"] = $_POST;
+            $_SESSION["_SAVE_FILES_"] = $_FILES;
+            $lUrl = $_SERVER["REQUEST_URI"];
+            $this->redirect($lUrl);
+            exit;
+        }
+        
+        if(isset($_SESSION["_SAVE_POST_"])) {
+            $_POST = $_SESSION["_SAVE_POST_"];
+            $_FILES = $_SESSION["_SAVE_FILES_"];
+            unset($_SESSION["_SAVE_POST_"], $_SESSION["_SAVE_FILES_"]);
+        }
+    }
+    //===============================================
     // string
     //===============================================
     public function getWidth($widthMap, $index, $defaultWidth) {
