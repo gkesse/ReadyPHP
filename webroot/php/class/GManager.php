@@ -120,10 +120,9 @@ class GManager {
             $_SESSION["_SAVE_POST_"] = $_POST;
             $_SESSION["_SAVE_FILES_"] = $_FILES;
             $lUrl = $_SERVER["REQUEST_URI"];
-            $this->redirect($lUrl);
+            header("Location: " . $lUrl);
             exit;
         }
-        
         if(isset($_SESSION["_SAVE_POST_"])) {
             $_POST = $_SESSION["_SAVE_POST_"];
             $_FILES = $_SESSION["_SAVE_FILES_"];

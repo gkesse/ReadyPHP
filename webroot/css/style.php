@@ -211,6 +211,13 @@ span {
     padding: 10px 10px;
     border-bottom: 1px solid #ffffff;
 }
+.filesystem_id .header .sep {
+    font-size: <?php echo $config['app_icon_size']; ?>px;
+    margin: 0px 5px;
+}
+.filesystem_id .header .form {
+    display: inline-block;
+}
 .filesystem_id .body .file {
     display: block;
     padding: 5px 10px;

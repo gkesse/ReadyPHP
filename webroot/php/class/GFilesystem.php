@@ -13,8 +13,21 @@ class GFilesystem extends GWidget {
         $this->request();
         echo sprintf("<div class='filesystem_id'>\n");
         echo sprintf("<div class='header'>\n");
-        echo sprintf("<div class='item'>%s</div>\n", $lApp->filesystem);
+        $lMap = explode("/", $lApp->filesystem);
+        $lAddress = "";
+        for($i = 0; $i < count($lMap); $i++) {
+            if($i != 0) {echo sprintf("<i class='sep fa fa-chevron-right'></i>\n", $lItem);}
+            $lItem = $lMap[$i];
+            if($i != 0) {$lAddress .= "/";}
+            $lAddress .= $lItem;
+            echo sprintf("<form class='form' action='' method='post'>
+            <input type='hidden' id='req' name='req' value='open_key'/>
+            <input type='hidden' id='new_path' name='new_path' value='%s'/>
+            <button class='key' type='submit'>
+            %s</button></form>\n", $lAddress, $lItem);
+        }
         echo sprintf("</div>\n");
+        //
         echo sprintf("<div class='body'>\n");
         foreach (new DirectoryIterator($lApp->filesystem) as $lFileInfo) {
             if($lFileInfo->isDot()) {continue;}
