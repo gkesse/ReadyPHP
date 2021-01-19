@@ -22,7 +22,7 @@ class GManager {
         $this->mgr->app->logo_web = "/data/img/logo_web.png";
         $this->mgr->app->logo_flat = "/data/img/logo_flat.png";
         $this->mgr->app->logo_org = "/data/img/logo_org.png";
-        $this->mgr->app->filesystem = ".";
+        $this->mgr->app->filesystem = &$_SESSION["filesystem"];;
     }
     //===============================================
     public static function Instance() {
@@ -47,6 +47,7 @@ class GManager {
         $this->clearDebug();
         $this->getPageId();
         $this->lastUrl();
+        $this->initFilesystem();
     }
     //===============================================
     // last_url
@@ -89,6 +90,13 @@ class GManager {
     public function clearDebug() {
         $lApp = $this->mgr->app;
         $lApp->debug = "";
+    }
+    //===============================================
+    // filesystem
+    //===============================================
+    public function initFilesystem() {
+        $lApp = $this->mgr->app;
+        if(!$lApp->filesystem) {$lApp->filesystem = ".";}
     }
     //===============================================
     // font

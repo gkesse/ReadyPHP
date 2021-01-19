@@ -20,6 +20,7 @@ class GFilesystem extends GWidget {
             $lItem = $lMap[$i];
             if($i != 0) {$lAddress .= "/";}
             $lAddress .= $lItem;
+            if($i == 0) {$lItem = "<i class='fa fa-home'></i>";}
             echo sprintf("<form class='form' action='' method='post'>
             <input type='hidden' id='req' name='req' value='open_key'/>
             <input type='hidden' id='new_path' name='new_path' value='%s'/>
@@ -57,6 +58,10 @@ class GFilesystem extends GWidget {
             }
             else if($lReq == "open_file") {
                 $lPath = $_POST["current_path"];
+                $lApp->filesystem = $lPath;
+            }
+            else if($lReq == "open_key") {
+                $lPath = $_POST["new_path"];
                 $lApp->filesystem = $lPath;
             }
         }
