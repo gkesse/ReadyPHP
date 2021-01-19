@@ -19,7 +19,7 @@ class GFilesystem extends GWidget {
             if($lFileInfo->isDot()) continue;
             $lFilename = $lFileInfo->getFilename();
             $lIcon = "file-text-o";
-            if($lFilename->isDir()) $lIcon = "folder";
+            if($lFileInfo->isDir()) $lIcon = "folder";
             echo sprintf("<div class='file'>
             <i class='icon fa fa-%s'></i> %s</div>\n", $lIcon, $lFilename);
         }        
