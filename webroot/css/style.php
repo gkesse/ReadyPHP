@@ -9,6 +9,7 @@ $config = array(
 "app_bg_color" => "#102030",
 "app_light_color" => "#304050",
 "app_font_size" => 20,
+"app_icon_size" => 16,
 "login_size" => 30,
 );
 //===============================================
@@ -200,6 +201,27 @@ span {
 .error_id {
     padding: 50px 10px;
     text-align: center;
+}
+/* ============================================== */
+/* filesystem */
+.filesystem_id {
+
+}
+.filesystem_id .header {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ffffff;
+}
+.filesystem_id .body .file {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.filesystem_id .body .file:hover {
+    background-color: <?php echo $config['app_light_color']; ?>;
+}
+.filesystem_id .body .file .icon {
+    font-size: <?php echo $config['app_icon_size']; ?>px;
+    margin-right: 5px;
 }
 /* ============================================== */
 /* html */
